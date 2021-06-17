@@ -21,4 +21,11 @@ Public Class frmListaProductos
     Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
     End Sub
+
+
+
+
+    Private Sub dgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellDoubleClick
+        'Escribir aqui doble click
+    End Sub
 End Class

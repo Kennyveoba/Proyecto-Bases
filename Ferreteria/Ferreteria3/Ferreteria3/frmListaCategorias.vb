@@ -62,11 +62,15 @@ Public Class frmListaCategorias
         llenarListaCategoriasXNombre()
     End Sub
 
-    Private Sub dgvCategorias_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategorias.CellContentDoubleClick
+
+    Private Sub dgvCategorias_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategorias.CellDoubleClick
         frmCategorias.txtCodCategoria.Text = dgvCategorias.SelectedRows.Item(0).Cells(0).Value
         frmCategorias.txtCategoria.Text = dgvCategorias.SelectedRows.Item(0).Cells(1).Value
         frmCategorias.btnModificar.Enabled = True
         Me.Close()
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
 
     End Sub
 End Class

@@ -46,3 +46,10 @@ C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmListaCategorias.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmFacturacion.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAcercaDe.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmClientes.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\bin\Debug\AdvancedDataGridView.dll
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\bin\Debug\AdvancedDataGridView.xml
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\bin\Debug\fr\AdvancedDataGridView.resources.dll
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\bin\Debug\ru\AdvancedDataGridView.resources.dll
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.vbproj.CopyComplete
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddClientes.resources

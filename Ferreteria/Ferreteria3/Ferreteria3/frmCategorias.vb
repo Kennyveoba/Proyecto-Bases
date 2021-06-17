@@ -32,7 +32,6 @@ Public Class frmCategorias
         tipoOper = 1
         btnGuardar.Enabled = True
         Me.txtCategoria.Enabled = True
-
     End Sub
 
     Private Sub frmCategorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -56,6 +55,13 @@ Public Class frmCategorias
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
+        If txtCategoria.Text = "" Then
+            MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+            Exit Sub
+        End If
+
+
         sqlCon = New SqlConnection(conn)
         Dim sqlComm As New SqlCommand()
         'se hace la referencia a la conexión, OJO ver código del Módulo 1
@@ -72,9 +78,14 @@ Public Class frmCategorias
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
+                deshabilitarObjetos()
+                MsgBox("Categoria Creada Correctamente", MsgBoxStyle.Information, "Registro Categorias")
             End Using
         Else
             Using (sqlCon)
+                If MsgBox("¿Desesa Guardar los Cambios?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Mensaje del Sistema") = MsgBoxResult.No Then
+                    Exit Sub
+                End If
                 'se indica el nombre del stored procedure y el tipo
                 sqlComm.CommandText = "spModificarCategoria"
                 sqlComm.CommandType = CommandType.StoredProcedure
@@ -84,6 +95,8 @@ Public Class frmCategorias
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
+                deshabilitarObjetos()
+                MsgBox("Categoria Editada Correctamente", MsgBoxStyle.Information, "Registro Categorias")
             End Using
         End If
 
@@ -104,6 +117,7 @@ Public Class frmCategorias
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        deshabilitarObjetos()
         frmListaCategorias.Show()
     End Sub
 
