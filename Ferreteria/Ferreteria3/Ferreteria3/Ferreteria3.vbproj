@@ -83,59 +83,101 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FerreteriaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmAcercaDe.Designer.vb">
+    <Compile Include="Ferreteria\frmAcercaDe.Designer.vb">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAcercaDe.vb">
+    <Compile Include="Ferreteria\frmAcercaDe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddClientes.Designer.vb">
+    <Compile Include="Clientes\frmAddClientes.Designer.vb">
       <DependentUpon>frmAddClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddClientes.vb">
+    <Compile Include="Clientes\frmAddClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategorias.Designer.vb">
+    <Compile Include="Productos\Categorias\frmCategorias.Designer.vb">
       <DependentUpon>frmCategorias.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCategorias.vb">
+    <Compile Include="Productos\Categorias\frmCategorias.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.vb">
+    <Compile Include="Clientes\frmClientes.Designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.vb">
+    <Compile Include="Clientes\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFacturacion.Designer.vb">
+    <Compile Include="Facturación\frmFacturacion.Designer.vb">
       <DependentUpon>frmFacturacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFacturacion.vb">
+    <Compile Include="Facturación\frmFacturacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFerreteria.vb">
+    <Compile Include="Ferreteria\frmFerreteria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFerreteria.Designer.vb">
+    <Compile Include="Ferreteria\frmFerreteria.Designer.vb">
       <DependentUpon>frmFerreteria.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaCategorias.Designer.vb">
-      <DependentUpon>frmListaCategorias.vb</DependentUpon>
+    <Compile Include="Productos\Categorias\frmAddCategorias.Designer.vb">
+      <DependentUpon>frmAddCategorias.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmListaCategorias.vb">
+    <Compile Include="Productos\Categorias\frmAddCategorias.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaProductos.Designer.vb">
+    <Compile Include="Productos\frmConsultaProductos.Designer.vb">
+      <DependentUpon>frmConsultaProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\frmConsultaProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\frmListaProductos.Designer.vb">
       <DependentUpon>frmListaProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmListaProductos.vb">
+    <Compile Include="Productos\frmListaProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductos.Designer.vb">
+    <Compile Include="Productos\frmProductos.Designer.vb">
       <DependentUpon>frmProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmProductos.vb">
+    <Compile Include="Productos\frmProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Unidades de medida\frmAddUnidadMedida.Designer.vb">
+      <DependentUpon>frmAddUnidadMedida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Unidades de medida\frmAddUnidadMedida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Unidades de medida\frmUnidadMedida.Designer.vb">
+      <DependentUpon>frmUnidadMedida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Unidades de medida\frmUnidadMedida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmAddProveedores.Designer.vb">
+      <DependentUpon>frmAddProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmAddProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmConsultasProveedor.Designer.vb">
+      <DependentUpon>frmConsultasProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmConsultasProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmInfoProveedor.Designer.vb">
+      <DependentUpon>frmInfoProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmInfoProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmProveedores.Designer.vb">
+      <DependentUpon>frmProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Proveedor\frmProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VB\Module1.vb" />
@@ -156,31 +198,34 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAcercaDe.resx">
+    <EmbeddedResource Include="Ferreteria\frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddClientes.resx">
+    <EmbeddedResource Include="Clientes\frmAddClientes.resx">
       <DependentUpon>frmAddClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategorias.resx">
+    <EmbeddedResource Include="Productos\Categorias\frmCategorias.resx">
       <DependentUpon>frmCategorias.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientes.resx">
+    <EmbeddedResource Include="Clientes\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFacturacion.resx">
+    <EmbeddedResource Include="Facturación\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFerreteria.resx">
+    <EmbeddedResource Include="Ferreteria\frmFerreteria.resx">
       <DependentUpon>frmFerreteria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaCategorias.resx">
-      <DependentUpon>frmListaCategorias.vb</DependentUpon>
+    <EmbeddedResource Include="Productos\Categorias\frmAddCategorias.resx">
+      <DependentUpon>frmAddCategorias.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaProductos.resx">
+    <EmbeddedResource Include="Productos\frmConsultaProductos.resx">
+      <DependentUpon>frmConsultaProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\frmListaProductos.resx">
       <DependentUpon>frmListaProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductos.resx">
+    <EmbeddedResource Include="Productos\frmProductos.resx">
       <DependentUpon>frmProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -188,6 +233,24 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Unidades de medida\frmAddUnidadMedida.resx">
+      <DependentUpon>frmAddUnidadMedida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Unidades de medida\frmUnidadMedida.resx">
+      <DependentUpon>frmUnidadMedida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Proveedor\frmAddProveedores.resx">
+      <DependentUpon>frmAddProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Proveedor\frmConsultasProveedor.resx">
+      <DependentUpon>frmConsultasProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Proveedor\frmInfoProveedor.resx">
+      <DependentUpon>frmInfoProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Proveedor\frmProveedores.resx">
+      <DependentUpon>frmProveedores.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -214,5 +277,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
