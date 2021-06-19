@@ -49,7 +49,7 @@ Public Class frmAddCategorias
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
                 MsgBox("Categoria Registrada Correctamente", MsgBoxStyle.Information, "Registro Categoria")
-                frmProveedores.mostraProvedor()
+                frmCategorias.llenarComboCategorias()
                 Me.Close()
             End Using
 
@@ -72,7 +72,7 @@ Public Class frmAddCategorias
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
                 MsgBox("La categoria se modifico correctamente", MsgBoxStyle.Information, "Modificar Categoria")
-                frmProveedores.mostraProvedor()
+                frmCategorias.llenarComboCategorias()
                 Me.Close()
             End Using
         End If

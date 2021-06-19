@@ -12,7 +12,7 @@ Public Class frmUnidadMedida
 
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
-        llenarListaCategoriasXNombre()
+        llenarListaUnidadexNombre()
     End Sub
 
     Sub llenarComboUnidades()
@@ -39,7 +39,7 @@ Public Class frmUnidadMedida
     End Sub
 
 
-    Sub llenarListaCategoriasXNombre()
+    Sub llenarListaUnidadexNombre()
         Dim sqlad As SqlDataAdapter
         Dim dt As DataTable
 
@@ -52,7 +52,7 @@ Public Class frmUnidadMedida
             sqlComm.Connection = sqlCon
 
             'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spSeleccionarCategoriasNombre"
+            sqlComm.CommandText = "spSeleccionarUnidadesNombre"
             sqlComm.CommandType = CommandType.StoredProcedure
             'se pasan los parámetros al store procedure
             sqlComm.Parameters.AddWithValue("@Nombre", txtbuscar.Text)

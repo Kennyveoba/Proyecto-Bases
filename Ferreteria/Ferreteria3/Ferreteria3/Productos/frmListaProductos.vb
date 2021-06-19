@@ -7,6 +7,55 @@ Public Class frmListaProductos
         cargarcategorias()
         cargarProveedores()
         cragarUnidadMedida()
+
+        'Resetea los valores a los iniciales al abrir la ventana para agrgar un producto
+        cbxCategoria.SelectedValue = -1
+        cbxProveedor.SelectedValue = -1
+        cbxUnidad.SelectedValue = -1
+        txtNombre.Text = ""
+        txtDescripcion.Text = ""
+        txtPrecioCompra.Text = ""
+        txtPrecioVenta.Text = ""
+
+        If tipoOper = 1 Then 'Insercion
+            Me.LblTitulo.Text = "Agregar nuevo producto"
+        Else
+            Me.LblTitulo.Text = "Modificar un producto"
+
+            Dim sqlad As SqlDataAdapter
+            Dim dt As DataTable
+
+            sqlCon = New SqlConnection(conn)
+
+            Using (sqlCon)
+
+                Dim sqlComm As New SqlCommand()
+                'se hace la referencia a la conexión, OJO ver código del Módulo 1
+                sqlComm.Connection = sqlCon
+
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spSeleccionarProducto"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                'se pasan los parámetros al store procedure
+                sqlComm.Parameters.AddWithValue("@CodProducto", CInt(frmProductos.DataGridView1.SelectedRows.Item(0).Cells(0).Value))
+                'se crea una instancia del sqldataadapter
+                sqlad = New SqlDataAdapter(sqlComm)
+                dt = New DataTable("Datos")
+                sqlad.Fill(dt)
+                frmProductos.Asistente.DataSource = dt
+            End Using
+
+            'Pone los datos del producto a modificar en la ventana 
+            TxtCodProducto.Text = frmProductos.Asistente.SelectedRows.Item(0).Cells(0).Value
+            txtNombre.Text = frmProductos.Asistente.SelectedRows.Item(0).Cells(1).Value
+            txtDescripcion.Text = frmProductos.Asistente.SelectedRows.Item(0).Cells(2).Value
+            cbxCategoria.SelectedValue = CInt(frmProductos.Asistente.SelectedRows.Item(0).Cells(3).Value)
+            cbxProveedor.SelectedValue = CInt(frmProductos.Asistente.SelectedRows.Item(0).Cells(4).Value)
+            cbxUnidad.SelectedValue = CInt(frmProductos.Asistente.SelectedRows.Item(0).Cells(5).Value)
+            txtPrecioCompra.Text = frmProductos.Asistente.SelectedRows.Item(0).Cells(6).Value
+            txtPrecioVenta.Text = frmProductos.Asistente.SelectedRows.Item(0).Cells(7).Value
+
+        End If
     End Sub
 
 
@@ -33,6 +82,8 @@ Public Class frmListaProductos
             cbxCategoria.ValueMember = "CodCategoria"
         End Using
     End Sub
+
+
 
     Public Sub cargarProveedores()
 
@@ -61,11 +112,9 @@ Public Class frmListaProductos
 
 
     Public Sub cragarUnidadMedida()
-
         Dim sqlad As SqlDataAdapter
         Dim dt As DataTable
         sqlCon = New SqlConnection(conn)
-
         Using (sqlCon)
 
             Dim sqlComm As New SqlCommand()
@@ -86,27 +135,17 @@ Public Class frmListaProductos
     End Sub
 
 
-
-
     Private Sub dgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
         'Escribir aqui doble click
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub LblTitulo_Click(sender As Object, e As EventArgs) Handles LblTitulo.Click
-
-    End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
+        'Valida que se pongan todos los datos
         If txtNombre.Text = "" Or txtPrecioCompra.Text = "" Or txtDescripcion.Text = "" Or txtPrecioCompra.Text = "" Or txtPrecioVenta.Text = "" Then
             MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
             Exit Sub
         End If
-
 
         sqlCon = New SqlConnection(conn)
         Dim sqlComm As New SqlCommand()
@@ -115,25 +154,30 @@ Public Class frmListaProductos
 
         If tipoOper = 1 Then 'Insercion
             Using (sqlCon)
-                'se indica el nombre del stored procedure y el tipo
-                sqlComm.CommandText = "spAgregarProducto"
-                sqlComm.CommandType = CommandType.StoredProcedure
-                'se pasan los parámetros al store procedure
-                sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TxtCodProducto.Text))
-                sqlComm.Parameters.AddWithValue("@CodProvedor", cbxProveedor.SelectedValue)
-                sqlComm.Parameters.AddWithValue("@CodCategoria", cbxCategoria.SelectedValue)
-                sqlComm.Parameters.AddWithValue("@CodUnidadMedida", cbxUnidad.SelectedValue)
-                sqlComm.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text)
-                sqlComm.Parameters.AddWithValue("@Nombre", txtNombre.Text)
-                sqlComm.Parameters.AddWithValue("@PrecioVenta", Convert.ToDecimal(txtPrecioVenta.Text))
-                sqlComm.Parameters.AddWithValue("@PrecioCompra", Convert.ToDecimal(txtPrecioCompra.Text))
-                sqlCon.Open()
+                Try
+                    'se indica el nombre del stored procedure y el tipo
+                    sqlComm.CommandText = "spAgregarProducto"
+                    sqlComm.CommandType = CommandType.StoredProcedure
+                    'se pasan los parámetros al store procedure
+                    sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TxtCodProducto.Text))
+                    sqlComm.Parameters.AddWithValue("@CodProvedor", cbxProveedor.SelectedValue)
+                    sqlComm.Parameters.AddWithValue("@CodCategoria", cbxCategoria.SelectedValue)
+                    sqlComm.Parameters.AddWithValue("@CodUnidadMedida", cbxUnidad.SelectedValue)
+                    sqlComm.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text)
+                    sqlComm.Parameters.AddWithValue("@Nombre", txtNombre.Text)
+                    sqlComm.Parameters.AddWithValue("@PrecioVenta", CInt(txtPrecioVenta.Text))
+                    sqlComm.Parameters.AddWithValue("@PrecioCompra", CInt(txtPrecioCompra.Text))
+                    sqlCon.Open()
 
-                'se ejecuta el el stored procedure en el servidor de bases de datos
-                sqlComm.ExecuteNonQuery()
-                MsgBox("Producto Registrado Correctamente", MsgBoxStyle.Information, "Registro Productos")
-                frmProveedores.mostraProvedor()
-                Me.Close()
+                    'se ejecuta el el stored procedure en el servidor de bases de datos
+                    sqlComm.ExecuteNonQuery()
+                    MsgBox("Producto Registrado Correctamente", MsgBoxStyle.Information, "Registro Productos")
+                    frmProductos.llenarComboProductos()
+                    Me.Close()
+                Catch ex As Exception
+                    MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+                End Try
+
             End Using
 
 
@@ -145,36 +189,32 @@ Public Class frmListaProductos
                 End If
 
                 'se indica el nombre del stored procedure y el tipo
-                sqlComm.CommandText = "spModificarCategoria"
+                sqlComm.CommandText = "spModificarProducto"
                 sqlComm.CommandType = CommandType.StoredProcedure
                 'se pasan los parámetros al store procedure
-                sqlComm.Parameters.AddWithValue("@CodCategoria", cbxCategoria.SelectedIndex)
-                sqlComm.Parameters.AddWithValue("@CodProvedor", cbxProveedor.SelectedIndex)
                 sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TxtCodProducto.Text))
-                sqlComm.Parameters.AddWithValue("@CodUnidadMedida", cbxUnidad.SelectedIndex)
+                sqlComm.Parameters.AddWithValue("@CodProvedor", cbxProveedor.SelectedValue)
+                sqlComm.Parameters.AddWithValue("@CodCategoria", cbxCategoria.SelectedValue)
+                sqlComm.Parameters.AddWithValue("@CodUnidadMedida", cbxUnidad.SelectedValue)
                 sqlComm.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text)
-                sqlComm.Parameters.AddWithValue("@PrecioVenta", CDec(txtPrecioVenta.Text))
-                sqlComm.Parameters.AddWithValue("@PrecioCompra", CDec(txtPrecioCompra.Text))
                 sqlComm.Parameters.AddWithValue("@Nombre", txtNombre.Text)
+                sqlComm.Parameters.AddWithValue("@PrecioVenta", CInt(txtPrecioVenta.Text))
+                sqlComm.Parameters.AddWithValue("@PrecioCompra", CInt(txtPrecioCompra.Text))
 
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
                 MsgBox("El producto se modifico correctamente", MsgBoxStyle.Information, "Modificar Categoria")
-                frmProveedores.mostraProvedor()
+                'Actualiza la tabla de productos
+                frmProductos.llenarComboProductos()
                 Me.Close()
             End Using
+
         End If
-
-        txtNombre.Text = ""
-        txtPrecioCompra.Text = ""
-        txtDescripcion.Text = ""
-        txtPrecioCompra.Text = ""
-        txtPrecioVenta.Text = ""
-
-
-        frmCategorias.llenarComboCategorias()
+        'Actualiza la tabla de productos
     End Sub
 
-
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
 End Class

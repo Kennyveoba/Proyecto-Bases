@@ -53,9 +53,11 @@ Partial Class frmInfoProveedor
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 10)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(475, 527)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(356, 428)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         '
@@ -65,11 +67,10 @@ Partial Class frmInfoProveedor
         Me.btnSalir.Font = New System.Drawing.Font("Elephant", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(365, 422)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSalir.Location = New System.Drawing.Point(274, 343)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnSalir.Size = New System.Drawing.Size(101, 98)
+        Me.btnSalir.Size = New System.Drawing.Size(76, 80)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -85,8 +86,7 @@ Partial Class frmInfoProveedor
         Me.LblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.LblTitulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.LblTitulo.Location = New System.Drawing.Point(77, 18)
-        Me.LblTitulo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblTitulo.Location = New System.Drawing.Point(58, 15)
         Me.LblTitulo.Name = "LblTitulo"
         Me.LblTitulo.Size = New System.Drawing.Size(247, 25)
         Me.LblTitulo.TabIndex = 0
@@ -97,8 +97,7 @@ Partial Class frmInfoProveedor
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(15, 76)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(11, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 13)
         Me.Label2.TabIndex = 1
@@ -106,29 +105,26 @@ Partial Class frmInfoProveedor
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(17, 332)
-        Me.txtDireccion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDireccion.Location = New System.Drawing.Point(13, 270)
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(449, 82)
+        Me.txtDireccion.Size = New System.Drawing.Size(338, 67)
         Me.txtDireccion.TabIndex = 10
         Me.txtDireccion.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TxtCodProvedor
         '
-        Me.TxtCodProvedor.Location = New System.Drawing.Point(17, 93)
-        Me.TxtCodProvedor.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCodProvedor.Location = New System.Drawing.Point(13, 76)
         Me.TxtCodProvedor.Name = "TxtCodProvedor"
         Me.TxtCodProvedor.ReadOnly = True
-        Me.TxtCodProvedor.Size = New System.Drawing.Size(132, 22)
+        Me.TxtCodProvedor.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodProvedor.TabIndex = 6
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(15, 315)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(11, 256)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(61, 13)
         Me.Label6.TabIndex = 5
@@ -136,18 +132,16 @@ Partial Class frmInfoProveedor
         '
         'txtCorreo
         '
-        Me.txtCorreo.Location = New System.Drawing.Point(17, 269)
-        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCorreo.Location = New System.Drawing.Point(13, 219)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(132, 22)
+        Me.txtCorreo.Size = New System.Drawing.Size(100, 20)
         Me.txtCorreo.TabIndex = 9
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(14, 133)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(10, 108)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 13)
         Me.Label3.TabIndex = 2
@@ -155,18 +149,16 @@ Partial Class frmInfoProveedor
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(17, 210)
-        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTelefono.Location = New System.Drawing.Point(13, 171)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(132, 22)
+        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
         Me.txtTelefono.TabIndex = 8
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(15, 252)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(11, 205)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(44, 13)
         Me.Label5.TabIndex = 4
@@ -174,18 +166,16 @@ Partial Class frmInfoProveedor
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(17, 150)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombre.Location = New System.Drawing.Point(13, 122)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(132, 22)
+        Me.txtNombre.Size = New System.Drawing.Size(100, 20)
         Me.txtNombre.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(14, 193)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(10, 157)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 13)
         Me.Label4.TabIndex = 3
@@ -193,11 +183,12 @@ Partial Class frmInfoProveedor
         '
         'frmInfoProveedor
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(496, 540)
+        Me.ClientSize = New System.Drawing.Size(372, 439)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MaximizeBox = False
         Me.Name = "frmInfoProveedor"
         Me.Text = "frmInfoProvedor"

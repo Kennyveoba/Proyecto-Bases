@@ -44,11 +44,6 @@ Public Class frmProductos
     End Sub
 
 
-
-    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
-
-    End Sub
-
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim sqlad As SqlDataAdapter
         Dim dt As DataTable
@@ -85,4 +80,105 @@ Public Class frmProductos
         frmListaProductos.ShowDialog()
     End Sub
 
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Try
+            frmListaProductos.TxtCodProducto.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
+            tipoOper = 2
+            frmListaProductos.ShowDialog()
+        Catch ex As Exception
+            MsgBox("Debe seleccionar un producto primero", MsgBoxStyle.Information, "Sistema")
+        End Try
+    End Sub
+
+
+
+    Private Sub dvgProvedores_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        frmListaProductos.TxtCodProducto.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
+        Try
+
+            tipoOper = 2
+            frmListaProductos.ShowDialog()
+        Catch ex As Exception
+            MsgBox("Debe seleccionar un producto primero", MsgBoxStyle.Information, "Sistema")
+        End Try
+    End Sub
+
+    Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
+
+        Try
+            frmAddProveedores.TxtCodProvedor.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
+        Catch ex As Exception
+            MsgBox("Debe seleccionar un producto primero", MsgBoxStyle.Information, "Sistema")
+            Exit Sub
+        End Try
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+
+        'sqlCon = New SqlConnection(conn)
+        'cmd = New SqlCommand("spObtenerMaximoCategoria", sqlCon)
+
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+            If MsgBox("¿Realmente desea eliminar este producto?" + vbCr + " Se eliminara para siempre eso es mucho tiempo!!", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Mensaje del Sistema") = MsgBoxResult.No Then
+                Exit Sub
+            End If
+
+            Dim sqlComm As New SqlCommand()
+            'se crea una instancia del sqldataadapter
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "spElimanarProducto"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            sqlComm.Parameters.AddWithValue("@CodProducto", DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            sqlad.Fill(dt)
+        End Using
+        Me.llenarComboProductos()
+    End Sub
+
+    Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
+
+
+        mostrarProductoFiltroNombre()
+
+
+    End Sub
+
+
+    Public Sub mostrarProductoFiltroNombre()
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+        sqlCon = New SqlConnection(conn)
+        Using (sqlCon)
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+            'se indica el nombre del stored procedure y el tipo
+            If cbProductos.Text = "Nombre" Then
+                sqlComm.CommandText = "spSeleccionarProductoNombre"
+
+            ElseIf cbProductos.Text = "Categoria" Then
+                sqlComm.CommandText = "spSeleccionarProductoCategoria"
+
+            ElseIf cbProductos.Text = "Proveedor" Then
+                sqlComm.CommandText = "spSeleccionarProductoProveedor"
+            End If
+
+            sqlComm.CommandType = CommandType.StoredProcedure
+            'se pasan los parámetros al store procedure
+            sqlComm.Parameters.AddWithValue("@Nombre", txtbuscar.Text)
+            'se crea una instancia del sqldataadapter
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            sqlad.Fill(dt)
+            DataGridView1.DataSource = dt
+        End Using
+    End Sub
+    Private Sub cbProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProductos.SelectedIndexChanged
+        llenarComboProductos()
+    End Sub
 End Class

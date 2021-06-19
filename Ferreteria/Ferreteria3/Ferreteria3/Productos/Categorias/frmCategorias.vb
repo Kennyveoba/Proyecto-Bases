@@ -85,8 +85,6 @@ Public Class frmCategorias
         End Try
     End Sub
 
-
-
     Sub llenarComboCategorias()
         Dim sqlad As SqlDataAdapter
         Dim dt As DataTable
@@ -153,11 +151,16 @@ Public Class frmCategorias
             'se hace la referencia a la conexión, OJO ver código del Módulo 1
             sqlComm.Connection = sqlCon
 
-            'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spElimanarCategoria"
-            sqlComm.CommandType = CommandType.StoredProcedure
-            sqlComm.Parameters.AddWithValue("@CodCategoria", dgvCategorias.SelectedRows.Item(0).Cells(0).Value)
-            sqlad.Fill(dt)
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spElimanarCategoria"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@CodCategoria", dgvCategorias.SelectedRows.Item(0).Cells(0).Value)
+                sqlad.Fill(dt)
+            Catch ex As Exception
+                MsgBox("La categoria no se puede borrar asegurese que ningun producto este registrado con esta categoria", MsgBoxStyle.Critical, "Sistema")
+            End Try
+
         End Using
         llenarComboCategorias()
     End Sub
