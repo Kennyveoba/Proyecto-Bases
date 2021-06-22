@@ -54,9 +54,15 @@ C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddClientes.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmProveedores.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddProveedores.resources
-C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmConsultaProductos.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmConsultasProveedor.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoProveedor.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddCategorias.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmUnidadMedida.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddUnidadMedida.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmConsultaProducto.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmSucursal.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInventario.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddCargo.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmCargos.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddEmpleado.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmEmpleados.resources

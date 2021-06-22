@@ -78,6 +78,42 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\frmConsultaCliente.Designer.vb">
+      <DependentUpon>frmConsultaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaProducto.Designer.vb">
+      <DependentUpon>frmConsultaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\frmAddCargo.Designer.vb">
+      <DependentUpon>frmAddCargo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmAddCargo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\frmAddEmpleado.Designer.vb">
+      <DependentUpon>frmAddEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmAddEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\frmEmpleados.Designer.vb">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\frmCargos.Designer.vb">
+      <DependentUpon>frmCargos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmCargos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FerreteriaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,12 +162,6 @@
     <Compile Include="Productos\Categorias\frmAddCategorias.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\frmConsultaProductos.Designer.vb">
-      <DependentUpon>frmConsultaProductos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Productos\frmConsultaProductos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Productos\frmListaProductos.Designer.vb">
       <DependentUpon>frmListaProductos.vb</DependentUpon>
     </Compile>
@@ -162,10 +192,10 @@
     <Compile Include="Productos\Proveedor\frmAddProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\Proveedor\frmConsultasProveedor.Designer.vb">
+    <Compile Include="Consultas\frmConsultasProveedor.Designer.vb">
       <DependentUpon>frmConsultasProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Productos\Proveedor\frmConsultasProveedor.vb">
+    <Compile Include="Consultas\frmConsultasProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos\Proveedor\frmInfoProveedor.Designer.vb">
@@ -178,6 +208,18 @@
       <DependentUpon>frmProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="Productos\Proveedor\frmProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sucursal\frmSucursal.Designer.vb">
+      <DependentUpon>frmSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursal\frmSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sucursal\Inventarios\frmInventario.Designer.vb">
+      <DependentUpon>frmInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursal\Inventarios\frmInventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VB\Module1.vb" />
@@ -198,6 +240,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Consultas\frmConsultaProducto.resx">
+      <DependentUpon>frmConsultaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\frmAddCargo.resx">
+      <DependentUpon>frmAddCargo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\frmAddEmpleado.resx">
+      <DependentUpon>frmAddEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\frmCargos.resx">
+      <DependentUpon>frmCargos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ferreteria\frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </EmbeddedResource>
@@ -218,9 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Categorias\frmAddCategorias.resx">
       <DependentUpon>frmAddCategorias.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\frmConsultaProductos.resx">
-      <DependentUpon>frmConsultaProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\frmListaProductos.resx">
       <DependentUpon>frmListaProductos.vb</DependentUpon>
@@ -243,7 +297,7 @@
     <EmbeddedResource Include="Productos\Proveedor\frmAddProveedores.resx">
       <DependentUpon>frmAddProveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\Proveedor\frmConsultasProveedor.resx">
+    <EmbeddedResource Include="Consultas\frmConsultasProveedor.resx">
       <DependentUpon>frmConsultasProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Proveedor\frmInfoProveedor.resx">
@@ -251,6 +305,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Proveedor\frmProveedores.resx">
       <DependentUpon>frmProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursal\frmSucursal.resx">
+      <DependentUpon>frmSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursal\Inventarios\frmInventario.resx">
+      <DependentUpon>frmInventario.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

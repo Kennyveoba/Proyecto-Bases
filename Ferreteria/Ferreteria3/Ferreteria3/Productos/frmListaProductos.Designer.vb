@@ -25,13 +25,10 @@ Partial Class frmListaProductos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListaProductos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cbxUnidad = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtPrecioVenta = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbxProveedor = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.cbxCategoria = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.LblTitulo = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -44,20 +41,23 @@ Partial Class frmListaProductos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LinkLabel3)
+        Me.GroupBox1.Controls.Add(Me.LinkLabel2)
+        Me.GroupBox1.Controls.Add(Me.LinkLabel1)
         Me.GroupBox1.Controls.Add(Me.cbxUnidad)
-        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.txtPrecioVenta)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.cbxProveedor)
-        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.cbxCategoria)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.LblTitulo)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -84,16 +84,6 @@ Partial Class frmListaProductos
         Me.cbxUnidad.Size = New System.Drawing.Size(121, 21)
         Me.cbxUnidad.TabIndex = 19
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(222, 157)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(109, 13)
-        Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Unidad de medida"
-        '
         'txtPrecioVenta
         '
         Me.txtPrecioVenta.Location = New System.Drawing.Point(120, 317)
@@ -119,16 +109,6 @@ Partial Class frmListaProductos
         Me.cbxProveedor.Size = New System.Drawing.Size(121, 21)
         Me.cbxProveedor.TabIndex = 15
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(222, 60)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(65, 13)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Proveedor"
-        '
         'cbxCategoria
         '
         Me.cbxCategoria.FormattingEnabled = True
@@ -136,16 +116,6 @@ Partial Class frmListaProductos
         Me.cbxCategoria.Name = "cbxCategoria"
         Me.cbxCategoria.Size = New System.Drawing.Size(121, 21)
         Me.cbxCategoria.TabIndex = 13
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(222, 105)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 13)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Categoria"
         '
         'LblTitulo
         '
@@ -273,6 +243,39 @@ Partial Class frmListaProductos
         Me.txtNombre.Size = New System.Drawing.Size(100, 20)
         Me.txtNombre.TabIndex = 7
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(222, 60)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(65, 13)
+        Me.LinkLabel1.TabIndex = 20
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Proveedor"
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel2.Location = New System.Drawing.Point(220, 157)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(109, 13)
+        Me.LinkLabel2.TabIndex = 21
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Unidad de medida"
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.Location = New System.Drawing.Point(222, 105)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(61, 13)
+        Me.LinkLabel3.TabIndex = 22
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "Categoria"
+        '
         'frmListaProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -306,9 +309,9 @@ Partial Class frmListaProductos
     Friend WithEvents txtPrecioVenta As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents cbxProveedor As ComboBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents cbxCategoria As ComboBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents cbxUnidad As ComboBox
-    Friend WithEvents Label9 As Label
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

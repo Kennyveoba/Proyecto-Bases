@@ -171,7 +171,7 @@ Public Class frmListaProductos
 
                     'se ejecuta el el stored procedure en el servidor de bases de datos
                     sqlComm.ExecuteNonQuery()
-                    MsgBox("Producto Registrado Correctamente", MsgBoxStyle.Information, "Registro Productos")
+                    MsgBox("Empleado Registrado Correctamente", MsgBoxStyle.Information, "Registro Empleados")
                     frmProductos.llenarComboProductos()
                     Me.Close()
                 Catch ex As Exception
@@ -204,7 +204,7 @@ Public Class frmListaProductos
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
-                MsgBox("El producto se modifico correctamente", MsgBoxStyle.Information, "Modificar Categoria")
+                MsgBox("El producto se modifico correctamente", MsgBoxStyle.Information, "Modificar Empleado")
                 'Actualiza la tabla de productos
                 frmProductos.llenarComboProductos()
                 Me.Close()
@@ -216,5 +216,17 @@ Public Class frmListaProductos
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        frmProveedores.ShowDialog()
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        frmCategorias.ShowDialog()
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        frmUnidadMedida.ShowDialog()
     End Sub
 End Class
