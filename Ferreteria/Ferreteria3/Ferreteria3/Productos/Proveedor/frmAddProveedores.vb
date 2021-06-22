@@ -95,4 +95,10 @@ Public Class frmAddProveedores
 
     End Sub
 
+    Private Sub frmAddProveedores_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        txtNombre.Text = ""
+        txtTelefono.Text = ""
+        txtCorreo.Text = ""
+        txtDireccion.Text = ""
+    End Sub
 End Class

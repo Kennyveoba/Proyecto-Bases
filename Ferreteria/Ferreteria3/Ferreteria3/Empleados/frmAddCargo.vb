@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Public Class frmAddCargo
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If TxtCodProvedor.Text = "" Or txtDireccion.Text = "" Then
+        If TxtCodProvedor.Text = "" Or txtDescripcion.Text = "" Then
             MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
             Exit Sub
         End If
@@ -20,7 +20,7 @@ Public Class frmAddCargo
                 sqlComm.CommandType = CommandType.StoredProcedure
                 'se pasan los parámetros al store procedure
                 sqlComm.Parameters.AddWithValue("@CodOcupacion", CInt(TxtCodProvedor.Text))
-                sqlComm.Parameters.AddWithValue("@Descripcion", txtDireccion.Text)
+                sqlComm.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text)
                 sqlComm.Parameters.AddWithValue("@Ocupacion", txtNombre.Text)
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
@@ -43,7 +43,7 @@ Public Class frmAddCargo
                 sqlComm.CommandType = CommandType.StoredProcedure
                 'se pasan los parámetros al store procedure
                 sqlComm.Parameters.AddWithValue("@CodOcupacion", CInt(TxtCodProvedor.Text))
-                sqlComm.Parameters.AddWithValue("@Descripcion", txtDireccion.Text)
+                sqlComm.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text)
                 sqlComm.Parameters.AddWithValue("@Nombre", txtNombre.Text)
 
                 sqlCon.Open()
@@ -55,21 +55,21 @@ Public Class frmAddCargo
             End Using
         End If
         TxtCodProvedor.Text = ""
-        txtDireccion.Text = ""
+        txtDescripcion.Text = ""
 
     End Sub
 
     Private Sub frmAddCargo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         txtNombre.Text = ""
-        txtDireccion.Text = ""
+        txtDescripcion.Text = ""
         If tipoOper = 1 Then 'Insercion
             Me.LblTitulo.Text = "Agregar nuevo cargo"
         Else
             Me.LblTitulo.Text = "Modificar un cargo"
             TxtCodProvedor.Text = frmCargos.DataGridView1.SelectedRows.Item(0).Cells(0).Value
             txtNombre.Text = frmCargos.DataGridView1.SelectedRows.Item(0).Cells(1).Value
-            txtDireccion.Text = frmCargos.DataGridView1.SelectedRows.Item(0).Cells(2).Value
+            txtDescripcion.Text = frmCargos.DataGridView1.SelectedRows.Item(0).Cells(2).Value
         End If
     End Sub
 
@@ -81,5 +81,8 @@ Public Class frmAddCargo
 
     End Sub
 
-
+    Private Sub frmAddCargo_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        txtNombre.Text = ""
+        txtDescripcion.Text = ""
+    End Sub
 End Class

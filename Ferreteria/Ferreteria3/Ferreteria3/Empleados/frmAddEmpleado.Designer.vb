@@ -118,7 +118,7 @@ Partial Class frmAddEmpleado
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(14, 182)
+        Me.txtTelefono.Location = New System.Drawing.Point(13, 173)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
         Me.txtTelefono.TabIndex = 20

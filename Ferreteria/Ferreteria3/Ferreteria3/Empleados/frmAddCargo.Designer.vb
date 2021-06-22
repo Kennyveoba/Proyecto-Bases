@@ -32,7 +32,7 @@ Partial Class frmAddCargo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -137,21 +137,21 @@ Partial Class frmAddCargo
         Me.txtNombre.Size = New System.Drawing.Size(97, 20)
         Me.txtNombre.TabIndex = 19
         '
-        'txtDireccion
+        'txtDescripcion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(12, 131)
-        Me.txtDireccion.Multiline = True
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(260, 83)
-        Me.txtDireccion.TabIndex = 20
-        Me.txtDireccion.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.txtDescripcion.Location = New System.Drawing.Point(12, 131)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(260, 83)
+        Me.txtDescripcion.TabIndex = 20
+        Me.txtDescripcion.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'frmAddCargo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 345)
-        Me.Controls.Add(Me.txtDireccion)
+        Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
@@ -178,5 +178,5 @@ Partial Class frmAddCargo
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtNombre As TextBox
-    Friend WithEvents txtDireccion As TextBox
+    Friend WithEvents txtDescripcion As TextBox
 End Class

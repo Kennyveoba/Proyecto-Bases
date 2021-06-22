@@ -26,15 +26,17 @@ Partial Class frmEmpleados
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.Asistente = New System.Windows.Forms.DataGridView()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.Asistente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -67,16 +69,6 @@ Partial Class frmEmpleados
         Me.txtbuscar.Name = "txtbuscar"
         Me.txtbuscar.Size = New System.Drawing.Size(233, 26)
         Me.txtbuscar.TabIndex = 0
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 117)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(541, 298)
-        Me.DataGridView1.TabIndex = 12
         '
         'GroupBox2
         '
@@ -146,13 +138,34 @@ Partial Class frmEmpleados
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
+        'Asistente
+        '
+        Me.Asistente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Asistente.Location = New System.Drawing.Point(242, 242)
+        Me.Asistente.Name = "Asistente"
+        Me.Asistente.ReadOnly = True
+        Me.Asistente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Asistente.Size = New System.Drawing.Size(10, 18)
+        Me.Asistente.TabIndex = 13
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 117)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(541, 298)
+        Me.DataGridView1.TabIndex = 14
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(565, 541)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Asistente)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -161,8 +174,9 @@ Partial Class frmEmpleados
         Me.Text = "Cargos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
+        CType(Me.Asistente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,10 +185,11 @@ Partial Class frmEmpleados
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtbuscar As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnBorrar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnNuevo As Button
+    Friend WithEvents Asistente As DataGridView
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

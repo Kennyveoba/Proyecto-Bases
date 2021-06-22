@@ -24,6 +24,9 @@ Partial Class frmListaProductos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListaProductos))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.cbxUnidad = New System.Windows.Forms.ComboBox()
         Me.txtPrecioVenta = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -41,9 +44,6 @@ Partial Class frmListaProductos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -75,6 +75,39 @@ Partial Class frmListaProductos
         Me.GroupBox1.Size = New System.Drawing.Size(359, 465)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.Location = New System.Drawing.Point(222, 105)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(61, 13)
+        Me.LinkLabel3.TabIndex = 22
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "Categoria"
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel2.Location = New System.Drawing.Point(220, 157)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(109, 13)
+        Me.LinkLabel2.TabIndex = 21
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Unidad de medida"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(222, 60)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(65, 13)
+        Me.LinkLabel1.TabIndex = 20
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Proveedor"
         '
         'cbxUnidad
         '
@@ -242,39 +275,6 @@ Partial Class frmListaProductos
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(100, 20)
         Me.txtNombre.TabIndex = 7
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(222, 60)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(65, 13)
-        Me.LinkLabel1.TabIndex = 20
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Proveedor"
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(220, 157)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(109, 13)
-        Me.LinkLabel2.TabIndex = 21
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Unidad de medida"
-        '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel3.Location = New System.Drawing.Point(222, 105)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(61, 13)
-        Me.LinkLabel3.TabIndex = 22
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "Categoria"
         '
         'frmListaProductos
         '

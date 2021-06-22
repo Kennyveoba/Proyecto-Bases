@@ -7,7 +7,6 @@ Public Class frmListaProductos
         cargarcategorias()
         cargarProveedores()
         cragarUnidadMedida()
-
         'Resetea los valores a los iniciales al abrir la ventana para agrgar un producto
         cbxCategoria.SelectedValue = -1
         cbxProveedor.SelectedValue = -1
@@ -16,6 +15,7 @@ Public Class frmListaProductos
         txtDescripcion.Text = ""
         txtPrecioCompra.Text = ""
         txtPrecioVenta.Text = ""
+
 
         If tipoOper = 1 Then 'Insercion
             Me.LblTitulo.Text = "Agregar nuevo producto"
@@ -228,5 +228,20 @@ Public Class frmListaProductos
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         frmUnidadMedida.ShowDialog()
+    End Sub
+
+    Private Sub frmListaProductos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        'Resetea los valores a los iniciales al abrir la ventana para agrgar un producto
+        cbxCategoria.SelectedValue = -1
+        cbxProveedor.SelectedValue = -1
+        cbxUnidad.SelectedValue = -1
+        txtNombre.Text = ""
+        txtDescripcion.Text = ""
+        txtPrecioCompra.Text = ""
+        txtPrecioVenta.Text = ""
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class

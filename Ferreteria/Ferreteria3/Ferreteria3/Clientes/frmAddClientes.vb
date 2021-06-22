@@ -121,4 +121,11 @@ Public Class frmAddClientes
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
+
+    Private Sub frmAddClientes_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        txtNombre.Text = ""
+        txtTelefono.Text = ""
+        txtCorreo.Text = ""
+        txtDireccion.Text = ""
+    End Sub
 End Class
