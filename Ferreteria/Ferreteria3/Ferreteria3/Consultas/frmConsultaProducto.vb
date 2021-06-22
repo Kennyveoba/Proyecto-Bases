@@ -26,6 +26,8 @@ Public Class frmConsultaProducto
             dt = New DataTable("Datos")
             sqlad.Fill(dt)
             DataGridView1.DataSource = dt
+
+            cbProductos.SelectedIndex = 0
         End Using
 
     End Sub
@@ -69,5 +71,13 @@ Public Class frmConsultaProducto
         Me.Close()
     End Sub
 
+    Private Sub cbProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProductos.SelectedIndexChanged
+        mostrarProductoFiltroNombre()
+    End Sub
 
+
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        frmInfoProducto.ShowDialog()
+    End Sub
 End Class

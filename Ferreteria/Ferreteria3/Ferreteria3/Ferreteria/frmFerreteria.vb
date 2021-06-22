@@ -66,4 +66,8 @@
     Private Sub EmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem.Click
         frmEmpleados.ShowDialog()
     End Sub
+
+    Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
+        frmConsultaCliente.ShowDialog()
+    End Sub
 End Class

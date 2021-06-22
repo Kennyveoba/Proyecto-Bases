@@ -158,5 +158,9 @@ Public Class frmUnidadMedida
             MsgBox("Debe seleccionar una unidad primero", MsgBoxStyle.Information, "Sistema")
         End Try
     End Sub
+
+    Private Sub frmUnidadMedida_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmAddProductos.cragarUnidadMedida()
+    End Sub
 End Class
 

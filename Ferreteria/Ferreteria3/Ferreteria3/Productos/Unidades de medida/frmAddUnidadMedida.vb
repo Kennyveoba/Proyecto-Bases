@@ -43,7 +43,9 @@ Public Class frmAddUnidadMedida
                 sqlComm.ExecuteNonQuery()
                 MsgBox("Unidad Registrada Correctamente", MsgBoxStyle.Information, "Registro Unidades")
                 frmProveedores.mostraProvedor()
+
                 Me.Close()
+
             End Using
 
 
@@ -65,6 +67,7 @@ Public Class frmAddUnidadMedida
                 sqlComm.ExecuteNonQuery()
                 MsgBox("La unidad se modifico correctamente", MsgBoxStyle.Information, "Modificar Unidad")
                 frmProveedores.mostraProvedor()
+
                 Me.Close()
             End Using
         End If

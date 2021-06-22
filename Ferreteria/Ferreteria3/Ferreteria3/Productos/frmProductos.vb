@@ -63,23 +63,23 @@ Public Class frmProductos
                 sqlad = New SqlDataAdapter(sqlComm)
                 dt = New DataTable("Datos")
                 sqlad.Fill(dt)
-                frmListaProductos.TxtCodProducto.Text = CStr(CInt(dt.Rows(0).Item(0)) + 1)
+                frmAddProductos.TxtCodProducto.Text = CStr(CInt(dt.Rows(0).Item(0)) + 1)
             Catch ex As Exception
                 'En caso que la tabla de clientes no tenga valores 
-                frmListaProductos.TxtCodProducto.Text = 1
+                frmAddProductos.TxtCodProducto.Text = 1
             End Try
 
         End Using
         tipoOper = 1
-        frmListaProductos.TxtCodProducto.Enabled = False
-        frmListaProductos.ShowDialog()
+        frmAddProductos.TxtCodProducto.Enabled = False
+        frmAddProductos.ShowDialog()
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            frmListaProductos.TxtCodProducto.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
+            frmAddProductos.TxtCodProducto.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
             tipoOper = 2
-            frmListaProductos.ShowDialog()
+            frmAddProductos.ShowDialog()
         Catch ex As Exception
             MsgBox("Debe seleccionar un producto primero", MsgBoxStyle.Information, "Sistema")
         End Try
@@ -88,11 +88,11 @@ Public Class frmProductos
 
 
     Private Sub dvgProvedores_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
-        frmListaProductos.TxtCodProducto.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
+        frmAddProductos.TxtCodProducto.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
         Try
 
             tipoOper = 2
-            frmListaProductos.ShowDialog()
+            frmAddProductos.ShowDialog()
         Catch ex As Exception
             MsgBox("Debe seleccionar un producto primero", MsgBoxStyle.Information, "Sistema")
         End Try

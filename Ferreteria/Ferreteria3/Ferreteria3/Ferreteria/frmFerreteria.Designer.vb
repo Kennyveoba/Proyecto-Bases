@@ -109,19 +109,19 @@ Partial Class frmFerreteria
         'ClientesToolStripMenuItem1
         '
         Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
-        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ClientesToolStripMenuItem1.Text = "Clientes"
         '
         'ProductosToolStripMenuItem1
         '
         Me.ProductosToolStripMenuItem1.Name = "ProductosToolStripMenuItem1"
-        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ProductosToolStripMenuItem1.Text = "Productos"
         '
         'ProveedoresToolStripMenuItem1
         '
         Me.ProveedoresToolStripMenuItem1.Name = "ProveedoresToolStripMenuItem1"
-        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ProveedoresToolStripMenuItem1.Text = "Proveedores"
         '
         'ReportesToolStripMenuItem

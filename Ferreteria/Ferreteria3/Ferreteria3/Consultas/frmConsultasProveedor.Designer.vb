@@ -25,10 +25,10 @@ Partial Class frmConsultasProveedor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsultasProveedor))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbProductos = New System.Windows.Forms.ComboBox()
         Me.txtbuscarProveedor = New System.Windows.Forms.TextBox()
         Me.dvgProvedores = New System.Windows.Forms.DataGridView()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.cbProductos = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dvgProvedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,6 +56,16 @@ Partial Class frmConsultasProveedor
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar por ..."
+        '
+        'cbProductos
+        '
+        Me.cbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbProductos.FormattingEnabled = True
+        Me.cbProductos.Items.AddRange(New Object() {"Nombre", "Codigo"})
+        Me.cbProductos.Location = New System.Drawing.Point(16, 23)
+        Me.cbProductos.Name = "cbProductos"
+        Me.cbProductos.Size = New System.Drawing.Size(127, 26)
+        Me.cbProductos.TabIndex = 2
         '
         'txtbuscarProveedor
         '
@@ -90,16 +100,6 @@ Partial Class frmConsultasProveedor
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'cbProductos
-        '
-        Me.cbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbProductos.FormattingEnabled = True
-        Me.cbProductos.Items.AddRange(New Object() {"Nombre", "Codigo"})
-        Me.cbProductos.Location = New System.Drawing.Point(16, 23)
-        Me.cbProductos.Name = "cbProductos"
-        Me.cbProductos.Size = New System.Drawing.Size(127, 26)
-        Me.cbProductos.TabIndex = 2
-        '
         'frmConsultasProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -109,7 +109,7 @@ Partial Class frmConsultasProveedor
         Me.Controls.Add(Me.dvgProvedores)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmConsultasProveedor"
         Me.Text = "frmConsultasProvedor"
         Me.GroupBox1.ResumeLayout(False)

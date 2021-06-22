@@ -120,4 +120,8 @@ Public Class frmCargos
         End Using
         Me.llenarComboProductos()
     End Sub
+
+    Private Sub frmCargos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmAddEmpleado.cargarOcupaciones()
+    End Sub
 End Class

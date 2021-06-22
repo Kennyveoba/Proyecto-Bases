@@ -34,6 +34,8 @@ Public Class frmConsultasProveedor
             dt = New DataTable("Datos")
             sqlad.Fill(dt)
             dvgProvedores.DataSource = dt
+
+
         End Using
     End Sub
 
@@ -56,6 +58,9 @@ Public Class frmConsultasProveedor
             dt = New DataTable("Datos")
             sqlad.Fill(dt)
             dvgProvedores.DataSource = dt
+
+            cbProductos.SelectedIndex = 0
+
         End Using
     End Sub
 
@@ -63,6 +68,7 @@ Public Class frmConsultasProveedor
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscarProveedor.TextChanged
         mostrarFiltroNombre()
     End Sub
+
 
 
     Public Sub mostrarFiltroNombre()
@@ -78,7 +84,12 @@ Public Class frmConsultasProveedor
             sqlComm.Connection = sqlCon
 
             'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spSeleccionarProvedorNombre"
+            If cbProductos.Text = "Nombre" Then
+                sqlComm.CommandText = "spSeleccionarProvedorNombre"
+
+            ElseIf cbProductos.Text = "Codigo" Then
+                sqlComm.CommandText = "spSeleccionarProveedorCodigo"
+            End If
             sqlComm.CommandType = CommandType.StoredProcedure
             'se pasan los parámetros al store procedure
             sqlComm.Parameters.AddWithValue("@Nombre", txtbuscarProveedor.Text)
@@ -92,5 +103,9 @@ Public Class frmConsultasProveedor
 
     Private Sub dvgProvedores_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dvgProvedores.CellDoubleClick
         frmInfoProveedor.ShowDialog()
+    End Sub
+
+    Private Sub cbProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProductos.SelectedIndexChanged
+        mostrarFiltroNombre()
     End Sub
 End Class

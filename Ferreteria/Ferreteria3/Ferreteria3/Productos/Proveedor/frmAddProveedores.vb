@@ -2,6 +2,7 @@
 Imports System.Data.SqlClient
 Public Class frmAddProveedores
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+
         Me.Close()
     End Sub
 
@@ -100,5 +101,9 @@ Public Class frmAddProveedores
         txtTelefono.Text = ""
         txtCorreo.Text = ""
         txtDireccion.Text = ""
+    End Sub
+
+    Private Sub btnSalir_Click_1(sender As Object, e As EventArgs)
+
     End Sub
 End Class

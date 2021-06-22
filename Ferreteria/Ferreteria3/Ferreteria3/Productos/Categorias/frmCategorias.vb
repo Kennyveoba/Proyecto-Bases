@@ -165,5 +165,7 @@ Public Class frmCategorias
         llenarComboCategorias()
     End Sub
 
-
+    Private Sub frmCategorias_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmAddProductos.cargarcategorias()
+    End Sub
 End Class

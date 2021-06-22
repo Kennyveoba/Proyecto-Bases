@@ -35,7 +35,6 @@ C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\bin\
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.vbprojAssemblyReference.cache
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmCategorias.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmFerreteria.resources
-C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmListaProductos.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmProductos.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.Resources.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.vbproj.GenerateResource.cache
@@ -66,3 +65,7 @@ C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmCargos.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddEmpleado.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmEmpleados.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmConsultaCliente.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoCliente.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoProducto.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddProductos.resources

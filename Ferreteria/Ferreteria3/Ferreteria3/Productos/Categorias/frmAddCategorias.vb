@@ -18,6 +18,7 @@ Public Class frmAddCategorias
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+
     End Sub
 
 
@@ -72,13 +73,14 @@ Public Class frmAddCategorias
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
                 MsgBox("La categoria se modifico correctamente", MsgBoxStyle.Information, "Modificar Categoria")
-                frmCategorias.llenarComboCategorias()
+
                 Me.Close()
             End Using
         End If
         TxtCodCategoría.Text = ""
         txtNombre.Text = ""
         txtDescripcion.Text = ""
-        frmCategorias.llenarComboCategorias()
+
     End Sub
+
 End Class

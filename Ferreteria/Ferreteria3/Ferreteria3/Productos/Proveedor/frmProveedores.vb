@@ -170,5 +170,7 @@ Public Class frmProveedores
         End Try
     End Sub
 
-
+    Private Sub frmProveedores_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmAddProductos.cargarProveedores()
+    End Sub
 End Class
