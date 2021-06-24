@@ -69,3 +69,5 @@ C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoCliente.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoProducto.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddProductos.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddSucusal.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoEncargado.resources

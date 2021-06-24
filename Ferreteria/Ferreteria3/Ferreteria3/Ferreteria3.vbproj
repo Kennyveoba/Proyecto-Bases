@@ -222,6 +222,18 @@
     <Compile Include="Productos\Proveedor\frmProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sucursal\frmAddSucusal.Designer.vb">
+      <DependentUpon>frmAddSucusal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursal\frmAddSucusal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sucursal\frmInfoEncargado.Designer.vb">
+      <DependentUpon>frmInfoEncargado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursal\frmInfoEncargado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sucursal\frmSucursal.Designer.vb">
       <DependentUpon>frmSucursal.vb</DependentUpon>
     </Compile>
@@ -326,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Proveedor\frmProveedores.resx">
       <DependentUpon>frmProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursal\frmAddSucusal.resx">
+      <DependentUpon>frmAddSucusal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursal\frmInfoEncargado.resx">
+      <DependentUpon>frmInfoEncargado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sucursal\frmSucursal.resx">
       <DependentUpon>frmSucursal.vb</DependentUpon>

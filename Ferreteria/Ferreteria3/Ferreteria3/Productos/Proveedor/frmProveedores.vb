@@ -97,11 +97,16 @@ Public Class frmProveedores
             'se hace la referencia a la conexión, OJO ver código del Módulo 1
             sqlComm.Connection = sqlCon
 
-            'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spElimanarProvedor"
-            sqlComm.CommandType = CommandType.StoredProcedure
-            sqlComm.Parameters.AddWithValue("@CodProvedor", dvgProvedores.SelectedRows.Item(0).Cells(0).Value)
-            sqlad.Fill(dt)
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spElimanarProvedor"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@CodProvedor", dvgProvedores.SelectedRows.Item(0).Cells(0).Value)
+                sqlad.Fill(dt)
+            Catch ex As Exception
+                MsgBox("No se puede eliminar ya que un producto se relaciona con este proveedor", MsgBoxStyle.Critical, "Sistema")
+            End Try
+
         End Using
         Me.mostraProvedor()
     End Sub

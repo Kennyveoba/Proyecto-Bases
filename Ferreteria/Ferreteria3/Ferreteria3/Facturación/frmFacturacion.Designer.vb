@@ -54,6 +54,7 @@ Partial Class frmFacturacion
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -66,9 +67,9 @@ Partial Class frmFacturacion
         Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 1)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(877, 126)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -84,6 +85,7 @@ Partial Class frmFacturacion
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtNombreCliente)
         Me.GroupBox2.Controls.Add(Me.txtFecha)
         Me.GroupBox2.Controls.Add(Me.TextBox4)
         Me.GroupBox2.Controls.Add(Me.lblFecha)
@@ -96,9 +98,9 @@ Partial Class frmFacturacion
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(7, 129)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(879, 92)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
@@ -106,7 +108,7 @@ Partial Class frmFacturacion
         'txtFecha
         '
         Me.txtFecha.Location = New System.Drawing.Point(620, 51)
-        Me.txtFecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtFecha.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(88, 20)
         Me.txtFecha.TabIndex = 9
@@ -114,7 +116,7 @@ Partial Class frmFacturacion
         'TextBox4
         '
         Me.TextBox4.Location = New System.Drawing.Point(766, 17)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(76, 20)
         Me.TextBox4.TabIndex = 8
@@ -152,7 +154,7 @@ Partial Class frmFacturacion
         'TextBox3
         '
         Me.TextBox3.Location = New System.Drawing.Point(145, 63)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(282, 20)
         Me.TextBox3.TabIndex = 5
@@ -160,7 +162,7 @@ Partial Class frmFacturacion
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(145, 37)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(282, 20)
         Me.TextBox2.TabIndex = 4
@@ -168,7 +170,7 @@ Partial Class frmFacturacion
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(145, 12)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(282, 20)
         Me.TextBox1.TabIndex = 3
@@ -206,11 +208,11 @@ Partial Class frmFacturacion
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.DataGridView1)
-        Me.GroupBox3.Location = New System.Drawing.Point(4, 226)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Location = New System.Drawing.Point(4, 225)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(879, 364)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox3.Size = New System.Drawing.Size(879, 365)
         Me.GroupBox3.TabIndex = 10
         Me.GroupBox3.TabStop = False
         '
@@ -220,11 +222,11 @@ Partial Class frmFacturacion
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodCodigo, Me.Descripcion, Me.Precio, Me.Cantidad, Me.Subtotal})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(2, 15)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(875, 347)
+        Me.DataGridView1.Size = New System.Drawing.Size(875, 348)
         Me.DataGridView1.TabIndex = 0
         '
         'CodCodigo
@@ -271,9 +273,9 @@ Partial Class frmFacturacion
         Me.GroupBox4.Controls.Add(Me.Label8)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Location = New System.Drawing.Point(4, 592)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(877, 102)
         Me.GroupBox4.TabIndex = 11
         Me.GroupBox4.TabStop = False
@@ -281,7 +283,7 @@ Partial Class frmFacturacion
         'TextBox7
         '
         Me.TextBox7.Location = New System.Drawing.Point(739, 22)
-        Me.TextBox7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox7.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(111, 20)
         Me.TextBox7.TabIndex = 5
@@ -289,7 +291,7 @@ Partial Class frmFacturacion
         'TextBox6
         '
         Me.TextBox6.Location = New System.Drawing.Point(739, 71)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(111, 20)
         Me.TextBox6.TabIndex = 4
@@ -297,7 +299,7 @@ Partial Class frmFacturacion
         'TextBox5
         '
         Me.TextBox5.Location = New System.Drawing.Point(739, 46)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(111, 20)
         Me.TextBox5.TabIndex = 3
@@ -340,6 +342,14 @@ Partial Class frmFacturacion
         Me.GroupBox5.TabIndex = 12
         Me.GroupBox5.TabStop = False
         '
+        'txtNombreCliente
+        '
+        Me.txtNombreCliente.Location = New System.Drawing.Point(449, 68)
+        Me.txtNombreCliente.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNombreCliente.Name = "txtNombreCliente"
+        Me.txtNombreCliente.Size = New System.Drawing.Size(282, 20)
+        Me.txtNombreCliente.TabIndex = 10
+        '
         'frmFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -350,7 +360,7 @@ Partial Class frmFacturacion
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmFacturacion"
         Me.Text = "Punto de Venta"
         Me.GroupBox1.ResumeLayout(False)
@@ -396,4 +406,5 @@ Partial Class frmFacturacion
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents txtNombreCliente As TextBox
 End Class

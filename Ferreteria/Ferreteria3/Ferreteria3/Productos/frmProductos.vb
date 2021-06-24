@@ -137,9 +137,7 @@ Public Class frmProductos
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
 
-
         mostrarProductoFiltroNombre()
-
 
     End Sub
 

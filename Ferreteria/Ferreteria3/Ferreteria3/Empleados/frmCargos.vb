@@ -112,11 +112,16 @@ Public Class frmCargos
             'se hace la referencia a la conexión, OJO ver código del Módulo 1
             sqlComm.Connection = sqlCon
 
-            'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spElimanarOcupacion"
-            sqlComm.CommandType = CommandType.StoredProcedure
-            sqlComm.Parameters.AddWithValue("@CodOcupacion", DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-            sqlad.Fill(dt)
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spElimanarOcupacion"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@CodOcupacion", DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+                sqlad.Fill(dt)
+            Catch ex As Exception
+                MsgBox("No se puede eliminar este puesto ya que un empleado se relaciona con el", MsgBoxStyle.Information, "Sistema")
+            End Try
+
         End Using
         Me.llenarComboProductos()
     End Sub

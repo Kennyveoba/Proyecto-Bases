@@ -138,11 +138,16 @@ Public Class frmUnidadMedida
             'se hace la referencia a la conexión, OJO ver código del Módulo 1
             sqlComm.Connection = sqlCon
 
-            'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spElimanarUnidadMedida"
-            sqlComm.CommandType = CommandType.StoredProcedure
-            sqlComm.Parameters.AddWithValue("@CodUnidadesDeMedida", dgvCategorias.SelectedRows.Item(0).Cells(0).Value)
-            sqlad.Fill(dt)
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spElimanarUnidadMedida"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@CodUnidadesDeMedida", dgvCategorias.SelectedRows.Item(0).Cells(0).Value)
+                sqlad.Fill(dt)
+            Catch ex As Exception
+                MsgBox("No se puede eliminar ya que un producto esta usando esta unidad de medida", MsgBoxStyle.Information, "Sistema")
+            End Try
+
         End Using
         llenarComboUnidades()
     End Sub

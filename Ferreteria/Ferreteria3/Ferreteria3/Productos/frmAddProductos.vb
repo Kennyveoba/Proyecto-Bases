@@ -134,11 +134,6 @@ Public Class frmAddProductos
         End Using
     End Sub
 
-
-    Private Sub dgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
-        'Escribir aqui doble click
-    End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         'Valida que se pongan todos los datos
@@ -177,10 +172,8 @@ Public Class frmAddProductos
                 Catch ex As Exception
                     MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
                 End Try
-
+                agregarInventario()
             End Using
-
-
 
         Else 'Modificar
             Using (sqlCon)
@@ -211,8 +204,71 @@ Public Class frmAddProductos
             End Using
 
         End If
-        'Actualiza la tabla de productos
     End Sub
+
+
+    Private Sub agregarInventario()
+        Dim indice As Integer
+        indice = SacarMaximoSucursal()
+
+        Using (sqlCon)
+
+            For i = 0 To indice - 1 Step 1
+                sqlCon = New SqlConnection(conn)
+                Dim sqlComm As New SqlCommand()
+                'se hace la referencia a la conexión, OJO ver código del Módulo 1
+                sqlComm.Connection = sqlCon
+                Using (sqlCon)
+
+                    'se indica el nombre del stored procedure y el tipo
+                    sqlComm.CommandText = "spCrearInventario"
+                    sqlComm.CommandType = CommandType.StoredProcedure
+                    sqlComm.Parameters.AddWithValue("@CodTienda", i + 1)
+                    sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TxtCodProducto.Text))
+                    sqlComm.Parameters.AddWithValue("@Cantidad", 0)
+
+                    sqlCon.Open()
+                    'se ejecuta el el stored procedure en el servidor de bases de datos
+                    sqlComm.ExecuteNonQuery()
+                End Using
+            Next
+
+        End Using
+    End Sub
+
+
+    Private Function SacarMaximoSucursal() As Integer
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+
+        'sqlCon = New SqlConnection(conn)
+        'cmd = New SqlCommand("spObtenerMaximoCategoria", sqlCon
+
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spObtenerMaximaSucursal"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                'se crea una instancia del sqldataadapter
+                sqlad = New SqlDataAdapter(sqlComm)
+                dt = New DataTable("Datos")
+                sqlad.Fill(dt)
+                Return CInt(dt.Rows(0).Item(0))
+            Catch ex As Exception
+                Return 0
+            End Try
+
+        End Using
+    End Function
+
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
@@ -241,7 +297,4 @@ Public Class frmAddProductos
         txtPrecioVenta.Text = ""
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class
