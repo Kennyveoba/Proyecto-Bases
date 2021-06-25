@@ -4,7 +4,6 @@ Public Class frmConsultasProveedor
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
-
     Private Sub frmConsultasProvedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterToScreen()
         mostraProvedor()
@@ -58,18 +57,13 @@ Public Class frmConsultasProveedor
             dt = New DataTable("Datos")
             sqlad.Fill(dt)
             dvgProvedores.DataSource = dt
-
             cbProductos.SelectedIndex = 0
-
         End Using
     End Sub
-
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscarProveedor.TextChanged
         mostrarFiltroNombre()
     End Sub
-
-
 
     Public Sub mostrarFiltroNombre()
         Dim sqlad As SqlDataAdapter
@@ -108,4 +102,5 @@ Public Class frmConsultasProveedor
     Private Sub cbProductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProductos.SelectedIndexChanged
         mostrarFiltroNombre()
     End Sub
+
 End Class

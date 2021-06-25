@@ -11,8 +11,7 @@ Public Class frmClientes
 
     Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterToScreen()
-        'TODO: esta línea de código carga datos en la tabla 'FerreteriaDataSet.Clientes' Puede moverla o quitarla según sea necesario.
-        Me.ClientesTableAdapter.Fill(Me.FerreteriaDataSet.Clientes)
+
         mostrarcliente()
     End Sub
 

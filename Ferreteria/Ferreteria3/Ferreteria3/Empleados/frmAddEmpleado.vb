@@ -8,6 +8,7 @@ Public Class frmAddEmpleado
     Private Sub frmAddEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         cargarOcupaciones()
+        cargarSucursales()
         ComboBox1.SelectedValue = -1
 
         If tipoOper = 1 Then 'Insercion
@@ -27,7 +28,7 @@ Public Class frmAddEmpleado
                 sqlComm.Connection = sqlCon
 
                 'se indica el nombre del stored procedure y el tipo
-                sqlComm.CommandText = "spSeleccionarEmpleado"
+                sqlComm.CommandText = "spModificarEmpleado"
                 sqlComm.CommandType = CommandType.StoredProcedure
                 'se pasan los parámetros al store procedure
                 sqlComm.Parameters.AddWithValue("@CodEmpleado", CInt(frmEmpleados.DataGridView1.SelectedRows.Item(0).Cells(0).Value))
@@ -48,6 +49,34 @@ Public Class frmAddEmpleado
             DateTimePicker1.Value = frmEmpleados.Asistente.SelectedRows.Item(0).Cells(4).Value
         End If
     End Sub
+
+
+    Public Sub cargarSucursales()
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "spMostrarTiendas"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            'se crea una instancia del sqldataadapter
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            sqlad.Fill(dt)
+            ComboBox2.DataSource = dt
+            ComboBox2.DisplayMember = "NombreTienda"
+            ComboBox2.ValueMember = "CodTienda"
+
+
+        End Using
+    End Sub
+
 
     Public Sub cargarOcupaciones()
         Dim sqlad As SqlDataAdapter
@@ -79,7 +108,7 @@ Public Class frmAddEmpleado
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Valida que se pongan todos los datos
-        If txtTelefono.Text = "" Or TxtCodProvedor.Text = "" Or txtNombre.Text = "" Or txtDireccion.Text = "" Or txtCorreo.Text = "" Or ComboBox1.Text = "" Or DateTimePicker1.Text = "" Then
+        If txtTelefono.Text = "" Or TxtCodProvedor.Text = "" Or txtNombre.Text = "" Or txtDireccion.Text = "" Or txtCorreo.Text = "" Or ComboBox1.Text = "" Or ComboBox2.Text = "" Or DateTimePicker1.Text = "" Then
             MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
             Exit Sub
         End If
@@ -109,6 +138,7 @@ Public Class frmAddEmpleado
                 sqlComm.Parameters.AddWithValue("@Direccion", txtDireccion.Text)
                 sqlComm.Parameters.AddWithValue("@Correo", txtCorreo.Text)
                 sqlComm.Parameters.AddWithValue("@CodOCupacion", CInt(ComboBox1.SelectedValue))
+                sqlComm.Parameters.AddWithValue("@CodSucursal", CInt(ComboBox2.SelectedValue))
                 sqlComm.Parameters.AddWithValue("@FechaNacimiento", DateTimePicker1.Text)
                 sqlCon.Open()
 
@@ -127,7 +157,7 @@ Public Class frmAddEmpleado
                 End If
 
                 'se indica el nombre del stored procedure y el tipo
-                sqlComm.CommandText = "spModificarEmpleado"
+                sqlComm.CommandText = "spModificarEmpleados"
                 sqlComm.CommandType = CommandType.StoredProcedure
                 'se pasan los parámetros al store procedure
                 sqlComm.Parameters.AddWithValue("@CodEmpleado", CInt(TxtCodProvedor.Text))
@@ -144,6 +174,7 @@ Public Class frmAddEmpleado
 
                 sqlComm.Parameters.AddWithValue("@Correo", txtCorreo.Text)
                 sqlComm.Parameters.AddWithValue("@CodOCupacion", CInt(ComboBox1.SelectedValue))
+                sqlComm.Parameters.AddWithValue("@CodSucursal", CInt(ComboBox2.SelectedValue))
                 sqlComm.Parameters.AddWithValue("@FechaNacimiento", DateTimePicker1.Text)
 
                 sqlCon.Open()
@@ -165,9 +196,12 @@ Public Class frmAddEmpleado
         txtTelefono.Text = ""
         txtCorreo.Text = ""
         txtDireccion.Text = ""
+        ComboBox2.SelectedValue = -1
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        frmSucursal.ShowDialog()
     End Sub
 End Class

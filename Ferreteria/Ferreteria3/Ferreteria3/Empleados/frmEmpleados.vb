@@ -108,13 +108,11 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        Try
-            frmAddEmpleado.TxtCodProvedor.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
+
+        frmAddEmpleado.TxtCodProvedor.Text = DataGridView1.SelectedRows.Item(0).Cells(0).Value
             tipoOper = 2
             frmAddEmpleado.ShowDialog()
-        Catch ex As Exception
-            MsgBox("Debe seleccionar un empleado primero", MsgBoxStyle.Information, "Sistema")
-        End Try
+
     End Sub
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged

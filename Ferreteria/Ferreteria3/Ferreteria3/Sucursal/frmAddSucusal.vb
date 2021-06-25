@@ -40,7 +40,7 @@ Public Class frmAddSucusal
                 CodSucursal.Text = dt(0)(0)
                 Txtdireccion.Text = dt(0)(2)
                 txtNombre.Text = dt(0)(3)
-                TxtCorreo.Text = dt(0)(1)
+                TxtCorreo.Text = dt(0)(5)
                 TxtTelefono.Text = dt(0)(4)
 
             End Using
@@ -111,7 +111,7 @@ Public Class frmAddSucusal
                 sqlComm.Parameters.AddWithValue("@Direccion", Txtdireccion.Text)
                 sqlComm.Parameters.AddWithValue("@NombreTienda", txtNombre.Text)
                 sqlComm.Parameters.AddWithValue("@Telefono", CInt(TxtTelefono.Text))
-                sqlComm.Parameters.AddWithValue("@Correo", Txtdireccion.Text)
+                sqlComm.Parameters.AddWithValue("@Correo", TxtCorreo.Text)
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
                 sqlComm.ExecuteNonQuery()
@@ -140,7 +140,7 @@ Public Class frmAddSucusal
                 sqlComm.Parameters.AddWithValue("@Telefono", CInt(TxtTelefono.Text))
 
 
-                sqlComm.Parameters.AddWithValue("@Correo", Txtdireccion.Text)
+                sqlComm.Parameters.AddWithValue("@Correo", TxtCorreo.Text)
 
                 sqlCon.Open()
                 'se ejecuta el el stored procedure en el servidor de bases de datos
@@ -212,10 +212,10 @@ Public Class frmAddSucusal
     End Sub
 
     Private Sub frmAddSucusal_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        frmSucursal.cargarTiendas()
         Txtdireccion.Text = ""
         txtNombre.Text = ""
         TxtCorreo.Text = ""
         TxtTelefono.Text = ""
+        frmSucursal.cargarTiendas()
     End Sub
 End Class

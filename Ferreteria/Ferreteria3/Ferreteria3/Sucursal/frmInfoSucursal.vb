@@ -39,4 +39,8 @@ Public Class frmInfoSucursal
             TextBox2.Text = dt(0)(4)
         End Using
     End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
 End Class

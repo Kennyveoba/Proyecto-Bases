@@ -25,6 +25,37 @@ Public Class frmSucursal
 
     End Sub
 
+
+
+    Public Sub cargarEmpleados()
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "spSeleccionarEmpleadosSucursal"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            sqlComm.Parameters.AddWithValue("@CodTienda", CInt(cbProductos.SelectedValue))
+            sqlComm.Parameters.AddWithValue("@Nombre", TextBox1.Text)
+            'se crea una instancia del sqldataadapter
+
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            sqlad.Fill(dt)
+            DataGridView1.DataSource = dt
+
+
+        End Using
+    End Sub
+
+
+
     Public Sub cargarEncargado()
 
         Dim sqlad As SqlDataAdapter
@@ -140,6 +171,7 @@ Public Class frmSucursal
         If vadera = 2 Then
             cargarEncargado()
             Tiendas = cbProductos.SelectedValue
+            cargarEmpleados()
         End If
     End Sub
 
@@ -167,15 +199,19 @@ Public Class frmSucursal
             dt = New DataTable("Datos")
             'se hace la referencia a la conexión, OJO ver código del Módulo 1
             sqlComm.Connection = sqlCon
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spElimanarSucursal"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@Tiendas", cbProductos.SelectedValue)
+                sqlad.Fill(dt)
+                cargarTiendas()
+                cargarEncargado()
+                MsgBox("Sucursal eliminada de forma exitosa", MsgBoxStyle.Information, "Sistema")
+            Catch ex As Exception
+                MsgBox("Error: Uno o varios empleados salen registrados en esta sucursal, debe estar vacia para continuar", MsgBoxStyle.Critical, "Sistema")
+            End Try
 
-            'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spElimanarSucursal"
-            sqlComm.CommandType = CommandType.StoredProcedure
-            sqlComm.Parameters.AddWithValue("@Tiendas", cbProductos.SelectedValue)
-            sqlad.Fill(dt)
-            cargarTiendas()
-            cargarEncargado()
-            MsgBox("Sucursal eliminada de forma exitosa", MsgBoxStyle.Information, "Sistema")
         End Using
     End Sub
 
@@ -187,5 +223,9 @@ Public Class frmSucursal
             MsgBox("Debe seleccionar una sucursal primero", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
         End If
 
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        cargarEmpleados()
     End Sub
 End Class
