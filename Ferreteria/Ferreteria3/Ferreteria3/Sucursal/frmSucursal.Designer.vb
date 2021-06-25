@@ -24,6 +24,7 @@ Partial Class frmSucursal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSucursal))
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -31,6 +32,7 @@ Partial Class frmSucursal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnBorrar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -52,6 +54,13 @@ Partial Class frmSucursal
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Sucursal"
         '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(317, 124)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(20, 20)
+        Me.TextBox3.TabIndex = 23
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
@@ -66,7 +75,7 @@ Partial Class frmSucursal
         Me.GroupBox1.Location = New System.Drawing.Point(12, 43)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(446, 597)
-        Me.GroupBox1.TabIndex = 22
+        Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         '
         'LinkLabel1
@@ -116,6 +125,7 @@ Partial Class frmSucursal
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.btnSalir)
         Me.GroupBox2.Controls.Add(Me.btnBorrar)
         Me.GroupBox2.Controls.Add(Me.btnModificar)
@@ -125,6 +135,20 @@ Partial Class frmSucursal
         Me.GroupBox2.Size = New System.Drawing.Size(434, 115)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.Font = New System.Drawing.Font("Elephant", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.Location = New System.Drawing.Point(261, 19)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(85, 80)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Informacion"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
@@ -197,6 +221,7 @@ Partial Class frmSucursal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(473, 642)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -212,16 +237,18 @@ Partial Class frmSucursal
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cbProductos As ComboBox
+    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Button1 As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnBorrar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnNuevo As Button
-    Friend WithEvents Label2 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents cbProductos As ComboBox
 End Class

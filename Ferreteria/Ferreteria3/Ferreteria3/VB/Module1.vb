@@ -6,4 +6,6 @@ Module Module1
     Public tipoOper As Integer 'si la operación es un INSERT O UPDATE
     Public Sucursal As Integer 'Para cambiar de sucursales
     Public CamposOk As Boolean
+    Public Tiendas As Integer
+
 End Module

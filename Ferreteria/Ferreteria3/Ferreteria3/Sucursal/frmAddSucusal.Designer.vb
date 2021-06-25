@@ -34,10 +34,10 @@ Partial Class frmAddSucusal
         Me.Label8 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Txtdireccion = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.TxtCorreo = New System.Windows.Forms.TextBox()
+        Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -136,34 +136,34 @@ Partial Class frmAddSucusal
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Agregar sucursal"
         '
-        'TextBox3
+        'Txtdireccion
         '
-        Me.TextBox3.Location = New System.Drawing.Point(15, 270)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(301, 73)
-        Me.TextBox3.TabIndex = 21
+        Me.Txtdireccion.Location = New System.Drawing.Point(15, 270)
+        Me.Txtdireccion.Multiline = True
+        Me.Txtdireccion.Name = "Txtdireccion"
+        Me.Txtdireccion.Size = New System.Drawing.Size(301, 73)
+        Me.Txtdireccion.TabIndex = 21
         '
-        'TextBox5
+        'txtNombre
         '
-        Me.TextBox5.Location = New System.Drawing.Point(190, 130)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox5.TabIndex = 22
+        Me.txtNombre.Location = New System.Drawing.Point(190, 130)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(126, 20)
+        Me.txtNombre.TabIndex = 22
         '
-        'TextBox4
+        'TxtCorreo
         '
-        Me.TextBox4.Location = New System.Drawing.Point(190, 174)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox4.TabIndex = 23
+        Me.TxtCorreo.Location = New System.Drawing.Point(190, 174)
+        Me.TxtCorreo.Name = "TxtCorreo"
+        Me.TxtCorreo.Size = New System.Drawing.Size(126, 20)
+        Me.TxtCorreo.TabIndex = 23
         '
-        'TextBox2
+        'TxtTelefono
         '
-        Me.TextBox2.Location = New System.Drawing.Point(190, 224)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox2.TabIndex = 24
+        Me.TxtTelefono.Location = New System.Drawing.Point(190, 224)
+        Me.TxtTelefono.Name = "TxtTelefono"
+        Me.TxtTelefono.Size = New System.Drawing.Size(126, 20)
+        Me.TxtTelefono.TabIndex = 24
         '
         'GroupBox2
         '
@@ -219,10 +219,10 @@ Partial Class frmAddSucusal
         Me.ClientSize = New System.Drawing.Size(342, 499)
         Me.Controls.Add(Me.cbProductos)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TxtTelefono)
+        Me.Controls.Add(Me.TxtCorreo)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.Txtdireccion)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label8)
@@ -252,10 +252,10 @@ Partial Class frmAddSucusal
     Friend WithEvents Label8 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Txtdireccion As TextBox
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents TxtCorreo As TextBox
+    Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnGuardar As Button

@@ -3,11 +3,20 @@ Imports System.Data.SqlClient
 Public Class frmInventario
     Private Sub frmInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tipoOper = 1
+        CenterToScreen()
+
         cargarTiendas()
         filtro()
-        CenterToScreen()
-    End Sub
 
+        If Tiendas = 0 Then
+            cbProductos.SelectedIndex = 0
+
+        Else
+            cbProductos.SelectedIndex = Tiendas - 1
+        End If
+
+
+    End Sub
 
 
     Public Sub cargarTiendas()
@@ -32,6 +41,7 @@ Public Class frmInventario
             cbProductos.DataSource = dt
             cbProductos.DisplayMember = "NombreTienda"
             cbProductos.ValueMember = "CodTienda"
+
             tipoOper = 2
         End Using
     End Sub
@@ -132,6 +142,7 @@ Public Class frmInventario
 
 
     Sub filtro()
+
         If MayoresDeCero.Checked = False Then
             buscarNombre()
 
@@ -181,6 +192,10 @@ Public Class frmInventario
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If TxtCantidad.Text = "" Then
+            Exit Sub
+        End If
+
         sqlCon = New SqlConnection(conn)
 
         Using (sqlCon)
@@ -194,7 +209,6 @@ Public Class frmInventario
             sqlComm.CommandType = CommandType.StoredProcedure
             sqlComm.Parameters.AddWithValue("@CodTienda", cbProductos.SelectedValue)
             sqlComm.Parameters.AddWithValue("@CodProducto", CInt(txtCodProducto.Text))
-
 
             Try
                 sqlComm.Parameters.AddWithValue("@Cantidad", CInt(TxtCantidad.Text))
@@ -218,7 +232,9 @@ Public Class frmInventario
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
+        If TxtCantidad.Text = "" Then
+            Exit Sub
+        End If
         sqlCon = New SqlConnection(conn)
 
         Using (sqlCon)
@@ -232,7 +248,15 @@ Public Class frmInventario
             sqlComm.CommandType = CommandType.StoredProcedure
             sqlComm.Parameters.AddWithValue("@CodTienda", cbProductos.SelectedValue)
             sqlComm.Parameters.AddWithValue("@CodProducto", CInt(txtCodProducto.Text))
-            sqlComm.Parameters.AddWithValue("@Cantidad", CInt(TxtCantidad.Text))
+
+            Try
+                sqlComm.Parameters.AddWithValue("@Cantidad", CInt(TxtCantidad.Text))
+            Catch ex As Exception
+                MsgBox("Error: La cantidad debe ser un numero", MsgBoxStyle.Critical, "Mensaje del Sistema")
+                TxtCantidad.Focus()
+                Exit Sub
+            End Try
+
             sqlCon.Open()
             'se ejecuta el el stored procedure en el servidor de bases de datos
             sqlComm.ExecuteNonQuery()

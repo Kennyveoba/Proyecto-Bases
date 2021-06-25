@@ -1,10 +1,14 @@
-﻿Public Class frmFerreteria
+﻿Imports System.Data
+Imports System.Data.SqlClient
+
+Public Class frmFerreteria
     Private Sub CategoríasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoríasToolStripMenuItem.Click
         frmCategorias.ShowDialog()
     End Sub
 
     Private Sub frmFerreteria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterToScreen()
+        Tiendas = 0
     End Sub
 
     Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
@@ -52,7 +56,12 @@
     End Sub
 
     Private Sub InventarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventarioToolStripMenuItem.Click
-        frmInventario.ShowDialog()
+        If cantidad() > 0 Then
+            frmInventario.ShowDialog()
+        Else
+            MsgBox("Error: No existe ningun inventario asociado a una tienda", MsgBoxStyle.Critical, "Mensaje del Sistema")
+        End If
+
     End Sub
 
     Private Sub SucursalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SucursalToolStripMenuItem.Click
@@ -70,4 +79,37 @@
     Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
         frmConsultaCliente.ShowDialog()
     End Sub
+
+    Private Sub EncargadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncargadoToolStripMenuItem.Click
+        frmConsultaEncargado.ShowDialog()
+    End Sub
+
+    Public Function cantidad() As Integer
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+
+        'sqlCon = New SqlConnection(conn)
+        'cmd = New SqlCommand("spObtenerMaximoCategoria", sqlCon
+
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+            Try
+                Dim sqlComm As New SqlCommand()
+                'se hace la referencia a la conexión, OJO ver código del Módulo 1
+                sqlComm.Connection = sqlCon
+
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spObtenerMaximaSucursal"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                'se crea una instancia del sqldataadapter
+                sqlad = New SqlDataAdapter(sqlComm)
+                dt = New DataTable("Datos")
+                sqlad.Fill(dt)
+                Return CInt(dt(0)(0))
+            Catch ex As Exception
+                Return -1
+            End Try
+        End Using
+    End Function
 End Class

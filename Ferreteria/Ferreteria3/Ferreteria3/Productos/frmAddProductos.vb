@@ -142,6 +142,12 @@ Public Class frmAddProductos
             Exit Sub
         End If
 
+
+        If IsNumeric(txtPrecioVenta.Text) = False Or IsNumeric(txtPrecioCompra.Text) = False Then
+            MsgBox("Error: El precio debe ser un numero", MsgBoxStyle.Critical, "Mensaje del Sistema")
+            Exit Sub
+        End If
+
         sqlCon = New SqlConnection(conn)
         Dim sqlComm As New SqlCommand()
         'se hace la referencia a la conexión, OJO ver código del Módulo 1
@@ -296,5 +302,6 @@ Public Class frmAddProductos
         txtPrecioCompra.Text = ""
         txtPrecioVenta.Text = ""
     End Sub
+
 
 End Class

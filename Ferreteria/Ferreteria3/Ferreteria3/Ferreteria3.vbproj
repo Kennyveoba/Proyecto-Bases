@@ -126,6 +126,18 @@
     <Compile Include="Empleados\frmCargos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Encargados\frmConsultaEncargado.Designer.vb">
+      <DependentUpon>frmConsultaEncargado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Encargados\frmConsultaEncargado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encargados\frmInfoEncargado.Designer.vb">
+      <DependentUpon>frmInfoEncargado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Encargados\frmInfoEncargado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FerreteriaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,10 +240,16 @@
     <Compile Include="Sucursal\frmAddSucusal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sucursal\frmInfoEncargado.Designer.vb">
-      <DependentUpon>frmInfoEncargado.vb</DependentUpon>
+    <Compile Include="Encargados\frmAddEncargado.Designer.vb">
+      <DependentUpon>frmAddEncargado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Sucursal\frmInfoEncargado.vb">
+    <Compile Include="Encargados\frmAddEncargado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sucursal\frmInfoSucursal.Designer.vb">
+      <DependentUpon>frmInfoSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursal\frmInfoSucursal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sucursal\frmSucursal.Designer.vb">
@@ -288,6 +306,12 @@
     <EmbeddedResource Include="Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Encargados\frmConsultaEncargado.resx">
+      <DependentUpon>frmConsultaEncargado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encargados\frmInfoEncargado.resx">
+      <DependentUpon>frmInfoEncargado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ferreteria\frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </EmbeddedResource>
@@ -342,8 +366,11 @@
     <EmbeddedResource Include="Sucursal\frmAddSucusal.resx">
       <DependentUpon>frmAddSucusal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sucursal\frmInfoEncargado.resx">
-      <DependentUpon>frmInfoEncargado.vb</DependentUpon>
+    <EmbeddedResource Include="Encargados\frmAddEncargado.resx">
+      <DependentUpon>frmAddEncargado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucursal\frmInfoSucursal.resx">
+      <DependentUpon>frmInfoSucursal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sucursal\frmSucursal.resx">
       <DependentUpon>frmSucursal.vb</DependentUpon>

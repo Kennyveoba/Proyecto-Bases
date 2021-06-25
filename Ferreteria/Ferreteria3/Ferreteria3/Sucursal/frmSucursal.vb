@@ -1,13 +1,57 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Public Class frmSucursal
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Dim vadera As Integer
+
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
     Private Sub frmSucursal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        vadera = 1
         Me.CenterToScreen()
         cargarTiendas()
+        cargarEncargado()
+        vadera = 2
+        If Tiendas = 0 Then
+            cbProductos.SelectedIndex = -1
+
+        Else
+            cbProductos.SelectedValue = Tiendas
+        End If
+
+
+    End Sub
+
+    Public Sub cargarEncargado()
+
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "spMostrarInfoTiendas"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            sqlComm.Parameters.AddWithValue("@CodTienda", cbProductos.SelectedValue)
+            'se crea una instancia del sqldataadapter
+            Try
+                sqlad = New SqlDataAdapter(sqlComm)
+                dt = New DataTable("Datos")
+                sqlad.Fill(dt)
+                TextBox2.Text = dt(0)(1)
+            Catch ex As Exception
+                TextBox2.Text = ""
+            End Try
+
+        End Using
     End Sub
 
     Public Sub cargarTiendas()
@@ -32,10 +76,16 @@ Public Class frmSucursal
             cbProductos.DataSource = dt
             cbProductos.DisplayMember = "NombreTienda"
             cbProductos.ValueMember = "CodTienda"
+
+
         End Using
     End Sub
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+    Private Sub LinkLabel1_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        frmConsultaEncargado.ShowDialog()
+    End Sub
+
+    Private Sub btnNuevo_Click_1(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim sqlad As SqlDataAdapter
         Dim dt As DataTable
 
@@ -58,6 +108,7 @@ Public Class frmSucursal
                 dt = New DataTable("Datos")
                 sqlad.Fill(dt)
                 frmAddSucusal.CodSucursal.Text = CStr(CInt(dt.Rows(0).Item(0)) + 1)
+
             Catch ex As Exception
                 'En caso que la tabla de clientes no tenga valores 
                 frmAddSucusal.CodSucursal.Text = 1
@@ -69,20 +120,30 @@ Public Class frmSucursal
         frmAddSucusal.ShowDialog()
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        frmInfoEncargado.ShowDialog()
-    End Sub
-
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Public Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         If cbProductos.SelectedValue = 0 Then
             MsgBox("Debe seleccionar una sucursal primero", MsgBoxStyle.Information, "Sistema")
             Exit Sub
         End If
+        tipoOper = 2
         frmAddSucusal.ShowDialog()
     End Sub
 
-    Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
 
+    Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+
+
+    Private Sub cbProductos_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbProductos.SelectedIndexChanged
+        If vadera = 2 Then
+            cargarEncargado()
+            Tiendas = cbProductos.SelectedValue
+        End If
+    End Sub
+
+    Private Sub btnBorrar_Click_1(sender As Object, e As EventArgs) Handles btnBorrar.Click
         If cbProductos.SelectedValue = 0 Then
             MsgBox("Debe seleccionar una sucursal primero", MsgBoxStyle.Information, "Sistema")
             Exit Sub
@@ -113,7 +174,18 @@ Public Class frmSucursal
             sqlComm.Parameters.AddWithValue("@Tiendas", cbProductos.SelectedValue)
             sqlad.Fill(dt)
             cargarTiendas()
+            cargarEncargado()
             MsgBox("Sucursal eliminada de forma exitosa", MsgBoxStyle.Information, "Sistema")
         End Using
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If cbProductos.SelectedIndex > -1 Then
+            frmInfoSucursal.ShowDialog()
+
+        Else
+            MsgBox("Debe seleccionar una sucursal primero", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+        End If
+
     End Sub
 End Class

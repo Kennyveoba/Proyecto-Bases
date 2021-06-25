@@ -118,10 +118,8 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub txtbuscar_TextChanged(sender As Object, e As EventArgs) Handles txtbuscar.TextChanged
-
         mostrarEmpleadoFiltroNombre()
     End Sub
-
 
     Public Sub mostrarEmpleadoFiltroNombre()
         Dim sqlad As SqlDataAdapter
@@ -147,7 +145,5 @@ Public Class frmEmpleados
             DataGridView1.DataSource = dt
         End Using
     End Sub
-
-
 
 End Class
