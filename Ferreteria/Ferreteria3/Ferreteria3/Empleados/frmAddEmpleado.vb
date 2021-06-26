@@ -5,6 +5,7 @@ Public Class frmAddEmpleado
         Me.Close()
     End Sub
 
+
     Private Sub frmAddEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         cargarOcupaciones()
@@ -47,6 +48,7 @@ Public Class frmAddEmpleado
             txtCorreo.Text = frmEmpleados.Asistente.SelectedRows.Item(0).Cells(5).Value
             txtDireccion.Text = frmEmpleados.Asistente.SelectedRows.Item(0).Cells(6).Value
             DateTimePicker1.Value = frmEmpleados.Asistente.SelectedRows.Item(0).Cells(4).Value
+            ComboBox2.SelectedValue = CInt(frmEmpleados.Asistente.SelectedRows.Item(0).Cells(7).Value)
         End If
     End Sub
 

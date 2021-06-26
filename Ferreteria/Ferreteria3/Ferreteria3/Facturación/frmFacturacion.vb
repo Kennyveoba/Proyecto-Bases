@@ -1,15 +1,114 @@
-﻿Imports System.Data
+﻿Imports System.ComponentModel
+Imports System.Data
 Imports System.Data.SqlClient
 Public Class frmFacturacion
     Dim thisDate As Date
     Dim cargar As Boolean
+    Dim VentaCancelada As Boolean
 
     Private Sub frmFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        actualizarTabla()
+        VentaCancelada = True
         cargar = False
         Me.CenterToScreen()
         cargarSucursales()
         Me.lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
+        NumeroDocumento()
+
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "MaestroVenta"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            'se pasan los parámetros al store procedure
+
+
+            sqlComm.Parameters.AddWithValue("@CodNumeroVenta", CInt(Label11.Text))
+            sqlComm.Parameters.AddWithValue("@Fecha", lblFecha.Text)
+            sqlComm.Parameters.AddWithValue("@CodigoTienda", CInt(ComboBox2.SelectedValue))
+
+            sqlCon.Open()
+            'se ejecuta el el stored procedure en el servidor de bases de datos
+            sqlComm.ExecuteNonQuery()
+
+
+        End Using
+
     End Sub
+
+
+    Public Sub actualizaMontoFinal()
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "sacarTotal"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            sqlComm.Parameters.AddWithValue("@CodDetalle", Label11.Text)
+
+            sqlCon.Open()
+            'se ejecuta el el stored procedure en el servidor de bases de datos
+            sqlComm.ExecuteNonQuery()
+
+
+
+            'se crea una instancia del sqldataadapter
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            sqlad.Fill(dt)
+
+
+            TextBox7.Text = CStr(dt(0)(0))
+            TextBox5.Text =  CInt(TextBox7.Text) * 0.13
+            TextBox6.Text = Format(CInt(TextBox7.Text) + CInt(TextBox5.Text), "₡0")
+            sqlCon.Close()
+        End Using
+    End Sub
+
+
+    Public Sub NumeroDocumento()
+
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "spObtenerNroDocumento"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            'se crea una instancia del sqldataadapter
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            sqlad.Fill(dt)
+            Try
+                Label11.Text = Format(dt(0)(0) + 1, "0000000")
+            Catch ex As Exception
+                Label11.Text = "0000001"
+            End Try
+            cargar = True
+        End Using
+
+    End Sub
+
 
 
     Public Sub cargarSucursales()
@@ -55,11 +154,11 @@ Public Class frmFacturacion
                 Exit Sub
             End If
             'se indica el nombre del stored procedure y el tipo
-            sqlComm.CommandText = "spSeleccionarEmpleado"
+            sqlComm.CommandText = "spSeleccionarClienteCodigo"
             sqlComm.CommandType = CommandType.StoredProcedure
             'se pasan los parámetros al store procedure
-            sqlComm.Parameters.AddWithValue("@CodEmpleado", CInt(TextBox4.Text))
-            sqlComm.Parameters.AddWithValue("@CodSucursal", CInt(ComboBox2.SelectedValue))
+            sqlComm.Parameters.AddWithValue("@Nombre", CInt(TextBox4.Text))
+
             'se crea una instancia del sqldataadapter
             sqlad = New SqlDataAdapter(sqlComm)
             dt = New DataTable("Datos")
@@ -68,10 +167,10 @@ Public Class frmFacturacion
             Try
 
                 TextBox2.Text = asistente.SelectedRows.Item(0).Cells(1).Value
-                TextBox1.Focus()
+                TextBox8.Focus()
 
             Catch ex As Exception
-                MsgBox("Error: El codigo del empleado no pertenece a ninguno registrado en esta sucursal", MsgBoxStyle.Critical, "Mensaje del Sistema")
+                MsgBox("Error: El codigo no pertenece a ningun cliente registrado", MsgBoxStyle.Critical, "Mensaje del Sistema")
                 TextBox2.Text = ""
                 TextBox4.Focus()
                 Exit Sub
@@ -84,14 +183,8 @@ Public Class frmFacturacion
         Me.Close()
     End Sub
 
-
-
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         frmProductos.ShowDialog()
-    End Sub
-
-    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        frmEmpleados.ShowDialog()
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
@@ -101,8 +194,6 @@ Public Class frmFacturacion
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
         frmClientes.ShowDialog()
     End Sub
-
-
 
     Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
         If Asc(e.KeyChar) = 13 Then
@@ -120,4 +211,209 @@ Public Class frmFacturacion
         End If
 
     End Sub
+
+    Private Sub TextBox8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox8.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Dim sqlad As SqlDataAdapter
+            Dim dt As DataTable
+
+            sqlCon = New SqlConnection(conn)
+
+            Using (sqlCon)
+
+                Dim sqlComm As New SqlCommand()
+                'se hace la referencia a la conexión, OJO ver código del Módulo 1
+                sqlComm.Connection = sqlCon
+
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spSeleccionarProducto"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                'se pasan los parámetros al store procedure
+
+                Try
+                    sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TextBox8.Text))
+                    'se crea una instancia del sqldataadapter
+                    sqlad = New SqlDataAdapter(sqlComm)
+                    dt = New DataTable("Datos")
+                    sqlad.Fill(dt)
+                    asistente.DataSource = dt
+                Catch ex As Exception
+                    MsgBox("Error: Solo se permiten numeros", MsgBoxStyle.Critical, "Mensaje del Sistema")
+                    Exit Sub
+                End Try
+            End Using
+
+            'Pone el nombre del producto que se va a agregar en el inventario  
+            Try
+                TextBox9.Text = asistente.SelectedRows.Item(0).Cells(1).Value
+                TextBox1.Text = asistente.SelectedRows.Item(0).Cells(7).Value
+                TextBox10.Enabled = True
+                TextBox10.Focus()
+            Catch ex As Exception
+                MsgBox("Error: El codigo de producto no pertenece a ninguno registrado", MsgBoxStyle.Critical, "Mensaje del Sistema")
+            End Try
+        End If
+        If Asc(e.KeyChar) = 8 Then
+            TextBox10.Enabled = False
+            TextBox10.Text = ""
+            TextBox9.Text = ""
+            TextBox1.Text = ""
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        sqlCon = New SqlConnection(conn)
+        Dim sqlComm As New SqlCommand()
+        'se hace la referencia a la conexión, OJO ver código del Módulo 1
+        sqlComm.Connection = sqlCon
+
+        Using (sqlCon)
+
+            'Valida que se ingrese solamente numeros en el campo de telefono
+            Try
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spAgregarVenta"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@CodDetalle", CInt(Label11.Text))
+
+
+                sqlComm.Parameters.AddWithValue("@NumeroVenta", CInt(Label11.Text))
+                sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TextBox8.Text))
+                sqlComm.Parameters.AddWithValue("@Cantidad", CInt(TextBox10.Text))
+                sqlComm.Parameters.AddWithValue("@Precio", CInt(TextBox1.Text))
+                sqlComm.Parameters.AddWithValue("@Total", CInt(TextBox1.Text) * CInt(TextBox10.Text))
+
+            Catch ex As Exception
+                MsgBox("Error: La cantidad debe ser un numero", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+                Exit Sub
+            End Try
+
+            sqlCon.Open()
+
+            'se ejecuta el el stored procedure en el servidor de bases de datos
+            sqlComm.ExecuteNonQuery()
+            actualizarTabla()
+            TextBox10.Enabled = False
+            TextBox10.Text = ""
+            TextBox9.Text = ""
+            TextBox1.Text = ""
+            TextBox8.Text = ""
+            TextBox8.Focus()
+            actualizaMontoFinal()
+            sqlCon.Close()
+        End Using
+    End Sub
+
+
+    Private Sub actualizarTabla()
+
+        Dim sqlad As SqlDataAdapter
+        Dim dt As DataTable
+
+        sqlCon = New SqlConnection(conn)
+
+        Using (sqlCon)
+
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            'se indica el nombre del stored procedure y el tipo
+            sqlComm.CommandText = "verCompras"
+            sqlComm.CommandType = CommandType.StoredProcedure
+            sqlComm.Parameters.AddWithValue("@CodVenta", Label11.Text)
+
+            sqlCon.Open()
+            'se ejecuta el el stored procedure en el servidor de bases de datos
+            sqlComm.ExecuteNonQuery()
+
+            'se crea una instancia del sqldataadapter
+            sqlad = New SqlDataAdapter(sqlComm)
+            dt = New DataTable("Datos")
+            sqlad.Fill(dt)
+            DataGridView2.DataSource = dt
+            sqlCon.Close()
+        End Using
+    End Sub
+
+
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        VentaCancelada = False
+    End Sub
+
+    Private Sub frmFacturacion_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If VentaCancelada = True Then
+
+
+            sqlCon = New SqlConnection(conn)
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            Using (sqlCon)
+
+                'se indica el nombre del stored procedure y el tipo
+                sqlComm.CommandText = "spElimanarVenta"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@CodDetalle", CInt(Label11.Text))
+
+
+                sqlCon.Open()
+
+                'se ejecuta el el stored procedure en el servidor de bases de datos
+                sqlComm.ExecuteNonQuery()
+                sqlCon.Close()
+            End Using
+        End If
+    End Sub
+
+
+    Private Sub TextBox10_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox10.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            sqlCon = New SqlConnection(conn)
+            Dim sqlComm As New SqlCommand()
+            'se hace la referencia a la conexión, OJO ver código del Módulo 1
+            sqlComm.Connection = sqlCon
+
+            Using (sqlCon)
+
+                'Valida que se ingrese solamente numeros en el campo de telefono
+                Try
+                    'se indica el nombre del stored procedure y el tipo
+                    sqlComm.CommandText = "spAgregarVenta"
+                    sqlComm.CommandType = CommandType.StoredProcedure
+                    sqlComm.Parameters.AddWithValue("@CodDetalle", CInt(Label11.Text))
+
+
+                    sqlComm.Parameters.AddWithValue("@NumeroVenta", CInt(Label11.Text))
+                    sqlComm.Parameters.AddWithValue("@CodProducto", CInt(TextBox8.Text))
+                    sqlComm.Parameters.AddWithValue("@Cantidad", CInt(TextBox10.Text))
+                    sqlComm.Parameters.AddWithValue("@Precio", CInt(TextBox1.Text))
+                    sqlComm.Parameters.AddWithValue("@Total", CInt(TextBox1.Text) * CInt(TextBox10.Text))
+                Catch ex As Exception
+                    MsgBox("Error: La cantidad debe ser un numero", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+                    Exit Sub
+                End Try
+
+                sqlCon.Open()
+
+                'se ejecuta el el stored procedure en el servidor de bases de datos
+                sqlComm.ExecuteNonQuery()
+                actualizarTabla()
+                TextBox10.Enabled = False
+                TextBox10.Text = ""
+                TextBox9.Text = ""
+                TextBox1.Text = ""
+                TextBox8.Text = ""
+                TextBox8.Focus()
+
+                sqlCon.Close()
+                actualizaMontoFinal()
+            End Using
+
+        End If
+    End Sub
+
+
 End Class

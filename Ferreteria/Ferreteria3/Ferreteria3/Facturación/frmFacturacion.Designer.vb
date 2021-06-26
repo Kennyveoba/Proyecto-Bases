@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmFacturacion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,18 @@ Partial Class frmFacturacion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFacturacion))
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -40,7 +42,6 @@ Partial Class frmFacturacion
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -52,8 +53,13 @@ Partial Class frmFacturacion
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.asistente = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -61,16 +67,12 @@ Partial Class frmFacturacion
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.asistente = New System.Windows.Forms.DataGridView()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        CType(Me.asistente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.asistente, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -96,9 +98,11 @@ Partial Class frmFacturacion
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.LinkLabel4)
         Me.GroupBox2.Controls.Add(Me.LinkLabel3)
-        Me.GroupBox2.Controls.Add(Me.LinkLabel2)
         Me.GroupBox2.Controls.Add(Me.TextBox11)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.Button1)
@@ -109,7 +113,6 @@ Partial Class frmFacturacion
         Me.GroupBox2.Controls.Add(Me.LinkLabel1)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.ComboBox2)
         Me.GroupBox2.Controls.Add(Me.TextBox4)
         Me.GroupBox2.Controls.Add(Me.Label12)
@@ -128,10 +131,39 @@ Partial Class frmFacturacion
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(199, 132)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.TabIndex = 33
+        Me.Label3.Text = "Precio"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(250, 129)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(66, 20)
+        Me.TextBox1.TabIndex = 32
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(393, 40)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(53, 13)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Vendedor"
+        '
         'LinkLabel4
         '
         Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Location = New System.Drawing.Point(393, 41)
+        Me.LinkLabel4.Location = New System.Drawing.Point(14, 41)
         Me.LinkLabel4.Name = "LinkLabel4"
         Me.LinkLabel4.Size = New System.Drawing.Size(39, 13)
         Me.LinkLabel4.TabIndex = 30
@@ -147,16 +179,6 @@ Partial Class frmFacturacion
         Me.LinkLabel3.TabIndex = 29
         Me.LinkLabel3.TabStop = True
         Me.LinkLabel3.Text = "Sucursal"
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(14, 40)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(53, 13)
-        Me.LinkLabel2.TabIndex = 28
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "Vendedor"
         '
         'TextBox11
         '
@@ -180,7 +202,7 @@ Partial Class frmFacturacion
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.Color.Green
-        Me.Button1.Location = New System.Drawing.Point(337, 127)
+        Me.Button1.Location = New System.Drawing.Point(321, 127)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(71, 24)
         Me.Button1.TabIndex = 25
@@ -189,16 +211,16 @@ Partial Class frmFacturacion
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(244, 127)
+        Me.TextBox10.Location = New System.Drawing.Point(250, 103)
         Me.TextBox10.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(65, 20)
+        Me.TextBox10.Size = New System.Drawing.Size(66, 20)
         Me.TextBox10.TabIndex = 24
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(251, 112)
+        Me.Label14.Location = New System.Drawing.Point(197, 106)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(49, 13)
@@ -208,10 +230,11 @@ Partial Class frmFacturacion
         'TextBox9
         '
         Me.TextBox9.Enabled = False
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox9.Location = New System.Drawing.Point(17, 127)
         Me.TextBox9.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(223, 20)
+        Me.TextBox9.Size = New System.Drawing.Size(178, 22)
         Me.TextBox9.TabIndex = 22
         '
         'TextBox8
@@ -246,19 +269,11 @@ Partial Class frmFacturacion
         'TextBox3
         '
         Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(545, 38)
+        Me.TextBox3.Location = New System.Drawing.Point(471, 37)
         Me.TextBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(199, 20)
         Me.TextBox3.TabIndex = 18
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(471, 37)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(60, 20)
-        Me.TextBox1.TabIndex = 17
         '
         'ComboBox2
         '
@@ -312,65 +327,111 @@ Partial Class frmFacturacion
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(816, 12)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(784, 15)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(43, 13)
+        Me.Label11.Size = New System.Drawing.Size(63, 20)
         Me.Label11.TabIndex = 11
         Me.Label11.Text = "000000"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(772, 12)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(711, 15)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(47, 13)
+        Me.Label10.Size = New System.Drawing.Size(69, 20)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "Numero:"
         '
         'lblFecha
         '
         Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(810, 37)
+        Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.Location = New System.Drawing.Point(776, 41)
         Me.lblFecha.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(37, 13)
+        Me.lblFecha.Size = New System.Drawing.Size(54, 20)
         Me.lblFecha.TabIndex = 7
         Me.lblFecha.Text = "Fecha"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(772, 37)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(711, 41)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 13)
+        Me.Label6.Size = New System.Drawing.Size(58, 20)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Fecha:"
         '
         'TextBox2
         '
         Me.TextBox2.Enabled = False
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.Location = New System.Drawing.Point(139, 37)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(199, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(159, 22)
         Me.TextBox2.TabIndex = 4
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Button3)
         Me.GroupBox3.Controls.Add(Me.DataGridView2)
         Me.GroupBox3.Controls.Add(Me.asistente)
         Me.GroupBox3.Controls.Add(Me.Button2)
-        Me.GroupBox3.Location = New System.Drawing.Point(5, 300)
+        Me.GroupBox3.Location = New System.Drawing.Point(172, 300)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox3.Size = New System.Drawing.Size(879, 417)
+        Me.GroupBox3.Size = New System.Drawing.Size(556, 417)
         Me.GroupBox3.TabIndex = 10
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle"
+        '
+        'Button3
+        '
+        Me.Button3.ForeColor = System.Drawing.Color.Crimson
+        Me.Button3.Location = New System.Drawing.Point(799, 388)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(71, 24)
+        Me.Button3.TabIndex = 34
+        Me.Button3.Text = "Eliminar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView2.Location = New System.Drawing.Point(2, 15)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView2.MultiSelect = False
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.RowHeadersWidth = 51
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView2.Size = New System.Drawing.Size(552, 400)
+        Me.DataGridView2.TabIndex = 31
+        '
+        'asistente
+        '
+        Me.asistente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.asistente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.asistente.Location = New System.Drawing.Point(2, 15)
+        Me.asistente.Margin = New System.Windows.Forms.Padding(2)
+        Me.asistente.MultiSelect = False
+        Me.asistente.Name = "asistente"
+        Me.asistente.ReadOnly = True
+        Me.asistente.RowHeadersWidth = 51
+        Me.asistente.RowTemplate.Height = 24
+        Me.asistente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.asistente.Size = New System.Drawing.Size(552, 400)
+        Me.asistente.TabIndex = 30
         '
         'Button2
         '
@@ -384,6 +445,8 @@ Partial Class frmFacturacion
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.btnSalir)
+        Me.GroupBox4.Controls.Add(Me.btnGuardar)
         Me.GroupBox4.Controls.Add(Me.TextBox7)
         Me.GroupBox4.Controls.Add(Me.TextBox6)
         Me.GroupBox4.Controls.Add(Me.TextBox5)
@@ -397,6 +460,34 @@ Partial Class frmFacturacion
         Me.GroupBox4.Size = New System.Drawing.Size(877, 102)
         Me.GroupBox4.TabIndex = 11
         Me.GroupBox4.TabStop = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.Transparent
+        Me.btnSalir.Font = New System.Drawing.Font("Elephant", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSalir.Location = New System.Drawing.Point(205, 12)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnSalir.Size = New System.Drawing.Size(76, 80)
+        Me.btnSalir.TabIndex = 12
+        Me.btnSalir.Text = "Cancelar"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Font = New System.Drawing.Font("Elephant", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnGuardar.Location = New System.Drawing.Point(15, 12)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(79, 80)
+        Me.btnGuardar.TabIndex = 13
+        Me.btnGuardar.Text = "Aceptar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'TextBox7
         '
@@ -435,7 +526,7 @@ Partial Class frmFacturacion
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(678, 73)
+        Me.Label8.Location = New System.Drawing.Point(678, 74)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(31, 13)
@@ -448,75 +539,15 @@ Partial Class frmFacturacion
         Me.Label7.Location = New System.Drawing.Point(678, 49)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(24, 13)
+        Me.Label7.Size = New System.Drawing.Size(47, 13)
         Me.Label7.TabIndex = 0
-        Me.Label7.Text = "IVA"
-        '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalir.Font = New System.Drawing.Font("Elephant", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(761, 824)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnSalir.Size = New System.Drawing.Size(76, 80)
-        Me.btnSalir.TabIndex = 12
-        Me.btnSalir.Text = "Cancelar"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.Font = New System.Drawing.Font("Elephant", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
-        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardar.Location = New System.Drawing.Point(43, 824)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(79, 80)
-        Me.btnGuardar.TabIndex = 13
-        Me.btnGuardar.Text = "Aceptar"
-        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'asistente
-        '
-        Me.asistente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.asistente.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.asistente.Location = New System.Drawing.Point(2, 15)
-        Me.asistente.Margin = New System.Windows.Forms.Padding(2)
-        Me.asistente.MultiSelect = False
-        Me.asistente.Name = "asistente"
-        Me.asistente.ReadOnly = True
-        Me.asistente.RowHeadersWidth = 51
-        Me.asistente.RowTemplate.Height = 24
-        Me.asistente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.asistente.Size = New System.Drawing.Size(875, 400)
-        Me.asistente.TabIndex = 30
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.Location = New System.Drawing.Point(2, 15)
-        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView2.MultiSelect = False
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersWidth = 51
-        Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(875, 400)
-        Me.DataGridView2.TabIndex = 31
+        Me.Label7.Text = "IVA 13%"
         '
         'frmFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(892, 916)
-        Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.btnSalir)
+        Me.ClientSize = New System.Drawing.Size(895, 830)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -531,10 +562,10 @@ Partial Class frmFacturacion
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.asistente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.asistente, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -559,7 +590,6 @@ Partial Class frmFacturacion
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label13 As Label
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label12 As Label
@@ -578,7 +608,10 @@ Partial Class frmFacturacion
     Friend WithEvents Label15 As Label
     Friend WithEvents LinkLabel4 As LinkLabel
     Friend WithEvents LinkLabel3 As LinkLabel
-    Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents asistente As DataGridView
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button3 As Button
     Friend WithEvents DataGridView2 As DataGridView
 End Class
