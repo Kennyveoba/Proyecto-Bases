@@ -14,6 +14,7 @@ Public Class frmSucursal
         Me.CenterToScreen()
         cargarTiendas()
         cargarEncargado()
+        cargarEmpleados()
         vadera = 2
         If Tiendas = 0 Then
             cbProductos.SelectedIndex = -1

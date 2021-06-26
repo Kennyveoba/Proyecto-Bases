@@ -7,6 +7,7 @@ Public Class frmFerreteria
     End Sub
 
     Private Sub frmFerreteria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Login.ShowDialog()
         CenterToScreen()
         Tiendas = 0
     End Sub

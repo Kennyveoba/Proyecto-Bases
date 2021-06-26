@@ -7,5 +7,6 @@ Module Module1
     Public Sucursal As Integer 'Para cambiar de sucursales
     Public CamposOk As Boolean
     Public Tiendas As Integer
+    Public Usuario As String
 
 End Module
