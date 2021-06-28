@@ -31,6 +31,7 @@ Partial Class frmFerreteria
         Me.UnidadesDeMedidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PuestosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EncargadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacturaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,7 +42,6 @@ Partial Class frmFerreteria
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucursalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EncargadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -93,6 +93,12 @@ Partial Class frmFerreteria
         Me.PuestosToolStripMenuItem.Name = "PuestosToolStripMenuItem"
         Me.PuestosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.PuestosToolStripMenuItem.Text = "Puestos"
+        '
+        'EncargadoToolStripMenuItem
+        '
+        Me.EncargadoToolStripMenuItem.Name = "EncargadoToolStripMenuItem"
+        Me.EncargadoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.EncargadoToolStripMenuItem.Text = "Encargado"
         '
         'FacturaciónToolStripMenuItem
         '
@@ -159,12 +165,6 @@ Partial Class frmFerreteria
         Me.SucursalToolStripMenuItem.Name = "SucursalToolStripMenuItem"
         Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
         Me.SucursalToolStripMenuItem.Text = "Sucursal"
-        '
-        'EncargadoToolStripMenuItem
-        '
-        Me.EncargadoToolStripMenuItem.Name = "EncargadoToolStripMenuItem"
-        Me.EncargadoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.EncargadoToolStripMenuItem.Text = "Encargado"
         '
         'frmFerreteria
         '

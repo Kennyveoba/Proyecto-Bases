@@ -7,10 +7,13 @@ Public Class frmFerreteria
     End Sub
 
     Private Sub frmFerreteria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Login.ShowDialog()
+
+
+
         CenterToScreen()
-        Tiendas = 0
+        Me.Hide()
     End Sub
+
 
     Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
         frmProductos.ShowDialog()
@@ -113,4 +116,12 @@ Public Class frmFerreteria
             End Try
         End Using
     End Function
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        frmReportes.ShowDialog()
+    End Sub
+
+    Private Sub frmFerreteria_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        frmLogin.Close()
+    End Sub
 End Class

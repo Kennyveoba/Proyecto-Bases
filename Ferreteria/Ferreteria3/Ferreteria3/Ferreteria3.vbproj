@@ -155,10 +155,10 @@
     <Compile Include="Clientes\frmAddClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ferreteria\Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="Ferreteria\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ferreteria\Login.vb">
+    <Compile Include="Ferreteria\frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos\Categorias\frmCategorias.Designer.vb">
@@ -240,6 +240,18 @@
     <Compile Include="Productos\Proveedor\frmProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmInfoVentas.Designer.vb">
+      <DependentUpon>frmInfoVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmInfoVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportes.Designer.vb">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sucursal\frmAddSucusal.Designer.vb">
       <DependentUpon>frmAddSucusal.vb</DependentUpon>
     </Compile>
@@ -275,6 +287,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -324,8 +337,8 @@
     <EmbeddedResource Include="Clientes\frmAddClientes.resx">
       <DependentUpon>frmAddClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ferreteria\Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="Ferreteria\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Categorias\frmCategorias.resx">
       <DependentUpon>frmCategorias.vb</DependentUpon>
@@ -372,6 +385,12 @@
     <EmbeddedResource Include="Productos\Proveedor\frmProveedores.resx">
       <DependentUpon>frmProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmInfoVentas.resx">
+      <DependentUpon>frmInfoVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes.resx">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sucursal\frmAddSucusal.resx">
       <DependentUpon>frmAddSucusal.vb</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +431,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -8,6 +8,7 @@ Public Class frmFacturacion
     Dim NumeroVenta As Integer 'Se guarda el numero de la factura 
 
     Private Sub frmFacturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         TextBox3.Text = Usuario
         'Actualiza todos los datos de los combobox y obtiene el valor de la factura 
         Cantidad = 0
@@ -33,7 +34,7 @@ Public Class frmFacturacion
             'se pasan los parámetros al store procedure
             sqlComm.Parameters.AddWithValue("@CodNumeroVenta", CInt(Label11.Text))
             sqlComm.Parameters.AddWithValue("@Fecha", lblFecha.Text)
-            sqlComm.Parameters.AddWithValue("@CodigoTienda", CInt(ComboBox2.SelectedValue))
+            sqlComm.Parameters.AddWithValue("@CodigoTienda", ComboBox2.Text)
             sqlCon.Open()
             'se ejecuta el el stored procedure en el servidor de bases de datos
             sqlComm.ExecuteNonQuery()
@@ -404,10 +405,10 @@ Public Class frmFacturacion
             sqlComm.CommandType = CommandType.StoredProcedure
             'se pasan los parámetros al store procedure
             sqlComm.Parameters.AddWithValue("@CodNumeroVenta", CInt(Label11.Text))
-            sqlComm.Parameters.AddWithValue("@CodigoTienda", CInt(ComboBox2.SelectedValue))
+            sqlComm.Parameters.AddWithValue("@CodigoTienda", ComboBox2.Text)
 
-            sqlComm.Parameters.AddWithValue("@CodTipoPago", CInt(ComboBox2.SelectedValue))
-            sqlComm.Parameters.AddWithValue("@CodCliente", CInt(txtCodCliente.Text))
+            sqlComm.Parameters.AddWithValue("@CodTipoPago", ComboBox1.Text)
+            sqlComm.Parameters.AddWithValue("@CodCliente", NombreCliente.Text)
             sqlComm.Parameters.AddWithValue("@Subtotal", CInt(Subtotal.Text))
             sqlComm.Parameters.AddWithValue("@Iva", CInt(IVA.Text))
             sqlComm.Parameters.AddWithValue("@Total", CInt(Total.Text))

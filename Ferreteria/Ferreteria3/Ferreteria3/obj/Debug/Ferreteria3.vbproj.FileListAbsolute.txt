@@ -74,4 +74,6 @@ C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmAddEncargado.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoSucursal.resources
 C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoEncargado.resources
-C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.Login.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmReportes.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmInfoVentas.resources
+C:\Users\kenny\OneDrive\Escritorio\Bases\Ferreteria\Ferreteria3\Ferreteria3\obj\Debug\Ferreteria3.frmLogin.resources
