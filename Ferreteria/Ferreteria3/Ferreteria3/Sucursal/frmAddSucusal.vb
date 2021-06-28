@@ -77,7 +77,8 @@ Public Class frmAddSucusal
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        frmAddEncargado.ShowDialog()
+        frmConsultaEncargado.ShowDialog()
+        cargarEncargado()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -88,10 +89,28 @@ Public Class frmAddSucusal
             Exit Sub
         End If
 
-        If CodSucursal.Text = "" Then
-            MsgBox("Complete Todos Los Datos Porfavor", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+        If cbProductos.Text = "" Then
+            MsgBox("Seleccione un encargado", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
             Exit Sub
         End If
+
+        If Txtdireccion.Text = "" Then
+            MsgBox("Debe ingresar la direccion ", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+            Exit Sub
+        End If
+
+
+        If txtNombre.Text = "" Then
+            MsgBox("Debe ingresar un nombre a la sucursal ", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+            Exit Sub
+        End If
+
+
+        If TxtCorreo.Text = "" Then
+            MsgBox("Debe ingresar el correo", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+            Exit Sub
+        End If
+
 
         sqlCon = New SqlConnection(conn)
         Dim sqlComm As New SqlCommand()

@@ -24,7 +24,14 @@ Public Class frmInfoVentas
 
             sqlCon.Open()
             'se ejecuta el el stored procedure en el servidor de bases de datos
-            sqlComm.ExecuteNonQuery()
+            Try
+
+                sqlComm.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox("Debe seleccionar un factura primero", MsgBoxStyle.Information, "Sistema")
+                Exit Sub
+            End Try
+
             'se crea una instancia del sqldataadapter
             sqlad = New SqlDataAdapter(sqlComm)
             dt = New DataTable("Datos")

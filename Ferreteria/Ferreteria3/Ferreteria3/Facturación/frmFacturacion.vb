@@ -359,6 +359,11 @@ Public Class frmFacturacion
             MsgBox("Debe ingresar al menos un producto ", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
             Exit Sub
         End If
+
+        If ComboBox2.Text = "" Then
+            MsgBox("Debe elegir la sucursal", MsgBoxStyle.Exclamation, "Mensaje del Sistema")
+            Exit Sub
+        End If
         'Recorre todos los productos comprados para eliminarlos del inventario
         For i As Integer = 0 To Tabla_Factura.RowCount - 2
             If Not Tabla_Factura.Rows.Item(i) Is Nothing Then
@@ -390,7 +395,7 @@ Public Class frmFacturacion
         txtCodCliente.Text = ""
         NombreCliente.Text = ""
         TextBox11.Text = ""
-        MsgBox("Compra realizada conexito!!", MsgBoxStyle.OkOnly, "Mensaje del Sistema")
+        MsgBox("Factura realizada con exito!!", MsgBoxStyle.OkOnly, "Mensaje del Sistema")
 
     End Sub
 
