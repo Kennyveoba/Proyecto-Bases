@@ -143,6 +143,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FerreteriaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ferreteria\frmAcercaDe.Designer.vb">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Encargados\frmInfoEncargado.resx">
       <DependentUpon>frmInfoEncargado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ferreteria\frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.vb</DependentUpon>

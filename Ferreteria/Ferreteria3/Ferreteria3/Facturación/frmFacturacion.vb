@@ -69,12 +69,12 @@ Public Class frmFacturacion
             Try
                 Subtotal.Text = CStr(dt(0)(0))
                 IVA.Text = CInt(Subtotal.Text) * 0.13
-                Total.Text = Format(CInt(Subtotal.Text) + CInt(IVA.Text), "₡0")
+                Total.Text = Format(CInt(Subtotal.Text) + CInt(IVA.Text), "0")
                 sqlCon.Close()
             Catch ex As Exception
                 Subtotal.Text = ""
                 IVA.Text = ""
-                Total.Text = Format("", "₡0")
+                Total.Text = Format("", "0")
             End Try
         End Using
     End Sub

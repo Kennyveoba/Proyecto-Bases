@@ -118,10 +118,19 @@ Public Class frmFerreteria
     End Function
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
-        frmReportes.ShowDialog()
+
     End Sub
 
     Private Sub frmFerreteria_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         frmLogin.Close()
+    End Sub
+
+    Private Sub ReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteToolStripMenuItem.Click
+        frmReportes.ShowDialog()
+    End Sub
+
+    Private Sub BitácoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitácoraToolStripMenuItem.Click
+        Form1.ShowDialog()
+
     End Sub
 End Class

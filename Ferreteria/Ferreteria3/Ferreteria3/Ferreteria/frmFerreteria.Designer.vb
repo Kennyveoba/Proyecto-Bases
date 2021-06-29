@@ -42,6 +42,8 @@ Partial Class frmFerreteria
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucursalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BitácoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -133,6 +135,7 @@ Partial Class frmFerreteria
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteToolStripMenuItem, Me.BitácoraToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -165,6 +168,18 @@ Partial Class frmFerreteria
         Me.SucursalToolStripMenuItem.Name = "SucursalToolStripMenuItem"
         Me.SucursalToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
         Me.SucursalToolStripMenuItem.Text = "Sucursal"
+        '
+        'ReporteToolStripMenuItem
+        '
+        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
+        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        '
+        'BitácoraToolStripMenuItem
+        '
+        Me.BitácoraToolStripMenuItem.Name = "BitácoraToolStripMenuItem"
+        Me.BitácoraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BitácoraToolStripMenuItem.Text = "Bitácora"
         '
         'frmFerreteria
         '
@@ -205,4 +220,6 @@ Partial Class frmFerreteria
     Friend WithEvents SucursalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InventarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncargadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BitácoraToolStripMenuItem As ToolStripMenuItem
 End Class
